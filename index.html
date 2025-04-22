@@ -4,155 +4,474 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BizMovePro – Advanced</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  <title>BizMovePro – Advanced Business Relocation Services</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="icon" href="logo1.png" type="image/x-icon" sizes="100x100">
+  
+  <!-- Cross-Browser Compatibility -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BizMovePro offers seamless business relocation services with advanced planning, real-time tracking, and zero downtime solutions.">
+  <meta name="author" content="BizMovePro Team">
+  <meta name="keywords" content="business relocation, office moving, packing services, IT relocation, CrossMovePro">
+
+  <!-- Polyfill for older browsers -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
   <style>
+    /* Base Styles */
+    :root {
+      --primary-color: #4e8cff;
+      --secondary-color: #ff4500;
+      --light-bg: #f8f9fa;
+      --dark-bg: #121212;
+      --dark-secondary: #1e1e1e;
+      --text-light: #f8f9fa;
+      --text-dark: #212529;
+      --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --card-shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      transition: all 0.3s ease;
+      color: var(--text-dark);
+      background-color: white;
+    }
+    
+    /* Dark Mode Styles */
+    body.dark-mode {
+      background-color: var(--dark-bg);
+      color: var(--text-light);
+    }
+    
+    .dark-mode .navbar,
+    .dark-mode .footer,
+    .dark-mode .testimonial,
+    .dark-mode .faq {
+      background-color: var(--dark-secondary) !important;
+    }
+    
+    .dark-mode .card {
+      background-color: var(--dark-secondary);
+      color: var(--text-light);
+      border: 1px solid #333;
+    }
+    
+    .dark-mode .card-text {
+      color: #ccc !important;
+    }
+    
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--primary-color);
+      font-weight: 700;
+    }
+    
+    .display-4 {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+    }
+    
+    .lead {
+      font-size: 1.1rem;
+    }
+    
+    /* Navigation */
+    .navbar {
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar-brand {
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--primary-color) !important;
+      transition: color 0.3s ease;
+    }
+    
+    .navbar-brand:hover {
+      color: var(--secondary-color) !important;
+    }
+    
+    .nav-link {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--primary-color) !important;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    
+    .nav-link:hover {
+      color: var(--secondary-color) !important;
+      transform: scale(1.1);
+    }
+    
+    .navbar-brand img {
+      height: 80px; /* Adjust the height as needed */
+      width: auto; /* Maintain aspect ratio */
+    }
+    
+    /* Buttons */
+    .btn-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+    
+    .btn-primary:hover {
+      background-color: #3a7bff;
+      border-color: #3a7bff;
+    }
+    
+    .btn-outline-secondary {
+      color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+    
+    .btn-outline-secondary:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+    
+    /* Feature Icons */
     .feature-icon {
       width: 4rem;
       height: 4rem;
       border-radius: .75rem;
+      background-color: rgba(78, 140, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
     }
-
-    body {
-      font-family: Arial, sans-serif;
-      transition: background-color 0.3s ease, color 0.3s ease;
+    
+    .feature-icon svg {
+      color: var(--primary-color);
+      font-size: 1.5rem;
     }
-
-    body.light-mode {
-      background-color: white;
-      color: black;
-    }
-
-    /* Dark Theme */
-    body.dark-mode {
-      background-color: #121212;
-      color: white;
-    }
-
-    .navbar,
-    .footer {
-      transition: background 0.3s ease;
-    }
-
-    .dark-mode .navbar,
-    .dark-mode .footer {
-      background-color: #333;
-    }
-
-    .toggle-btn {
-      cursor: pointer;
+    
+    /* Cards */
+    .card {
       border: none;
-      background: none;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      box-shadow: var(--card-shadow);
+      height: 100%;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--card-shadow-hover);
+    }
+    
+    .card-body {
+      padding: 1.5rem;
+    }
+    
+    .service-icon {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+    
+    /* Sections */
+    section {
+      padding: 4rem 0;
+    }
+    
+    .section-title {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    
+    /* Hero Section */
+    .hero {
+      padding: 5rem 0;
+      background: linear-gradient(135deg, rgba(78, 140, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    }
+    
+    .dark-mode .hero {
+      background: linear-gradient(135deg, rgba(78, 140, 255, 0.05) 0%, rgba(18, 18, 18, 0) 100%);
+    }
+    
+    /* Testimonials */
+    .testimonial {
+      background-color: var(--light-bg);
+    }
+    
+    .testimonial-card {
+      border-left: 4px solid var(--primary-color);
+    }
+    
+    /* FAQ */
+    .faq {
+      background-color: var(--light-bg);
+    }
+    
+    .faq-item {
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 1.5rem;
+    }
+    
+    .dark-mode .faq-item {
+      border-bottom-color: #333;
+    }
+    
+    .faq-question {
+      cursor: pointer;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .faq-question:hover {
+      color: var(--secondary-color);
+    }
+    
+    .faq-answer {
+      display: none;
+      margin-top: 1rem;
+      color: #666;
+    }
+    
+    .dark-mode .faq-answer {
+      color: #aaa;
+    }
+    
+    /* Footer */
+    .footer {
+      background-color: var(--light-bg);
+      padding: 3rem 0;
+    }
+    
+    .footer h5 {
+      margin-bottom: 1.5rem;
+      color: var(--primary-color);
+    }
+    
+    .footer-links {
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-links a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--secondary-color);
+    }
+    
+    .social-icons a {
+      color: inherit;
       font-size: 1.2rem;
-      margin-left: auto;
+      margin-right: 1rem;
+      transition: color 0.3s ease;
     }
-
-    .display-4 {
-      color: red;
+    
+    .social-icons a:hover {
+      color: var(--secondary-color);
     }
-
-    .dark-mode .navbar {
-      background-color: #222 !important;
-    }
-
+    
     /* Scroll-to-Top Button */
     .scroll-to-top {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background-color: #4e8cff;
-      color: #fff;
-      border-radius: 50%;
+      background-color: var(--primary-color);
+      color: white;
       width: 50px;
       height: 50px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-      z-index: 1000;
-      display: none;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
     }
-
+    
+    .scroll-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    
     .scroll-to-top:hover {
-      background-color: #ff4500;
+      background-color: var(--secondary-color);
+      transform: translateY(-3px);
+    }
+    
+    /* Carousel */
+    .carousel {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .carousel-item img {
+      object-fit: cover;
+      height: 500px;
+    }
+    
+    /* Theme Toggle */
+    .theme-toggle {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    
+    .theme-toggle:hover {
       transform: scale(1.1);
     }
-
-    /* Testimonial Section */
-    .testimonial {
-      background-color: #f8f9fa;
-      padding: 50px 0;
+    
+    /* Enhanced Feature Cards */
+    .feature-card {
+      transition: all 0.3s ease;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .dark-mode .feature-card {
+      background-color: var(--dark-secondary);
+      border: 1px solid #333;
+    }
+    
+    .dark-mode .feature-card:hover {
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(78, 140, 255, 0.1) 0%, rgba(78, 140, 255, 0.2) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .feature-card:hover .feature-icon {
+      transform: scale(1.1);
+      background: linear-gradient(135deg, rgba(78, 140, 255, 0.2) 0%, rgba(78, 140, 255, 0.3) 100%);
+    }
+    
+    .feature-icon svg {
+      color: var(--primary-color);
+      font-size: 2rem;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .display-4 {
+        font-size: 2rem;
+      }
+      
+      section {
+        padding: 3rem 0;
+      }
+      
+      .carousel-item img {
+        height: 300px;
+      }
     }
 
-    .testimonial .card {
-      border: none;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease-in-out;
+    /* Chatbox */
+    .live-chat {
+      position: fixed;
+      bottom: 20px;
+      right: 90px; /* Adjusted to avoid overlap with scroll-to-top button */
+      z-index: 1000;
     }
-
-    .testimonial .card:hover {
-      transform: scale(1.05);
-    }
-
-    /* FAQ Section */
-    .faq {
-      background-color: #f8f9fa;
-      padding: 50px 0;
-    }
-
-    .faq .faq-item {
-      margin-bottom: 20px;
-    }
-
-    .faq .faq-item h5 {
+    
+    .chat-icon {
+      background: var(--primary-color);
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
-      transition: color 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
-
-    .faq .faq-item h5:hover {
-      color: #ff4500;
-    }
-
-    .faq .faq-item p {
+    
+    .chat-box {
+      width: 300px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
       display: none;
-      margin-top: 10px;
     }
-
-    .navbar-brand {
-      color: #4e8cff !important; /* Blue color for the navbar heading */
-      font-weight: bold;
-      font-size: 1.5rem;
-      transition: color 0.3s ease-in-out;
+    
+    .chat-header {
+      padding: 15px;
+      background: var(--primary-color);
+      color: white;
+      border-radius: 10px 10px 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-
-    .navbar-brand:hover {
-      color: #ff4500 !important; /* Orange color on hover */
+    
+    .chat-body {
+      height: 300px;
+      padding: 15px;
+      overflow-y: auto;
+    }
+    
+    .chat-footer {
+      padding: 10px;
+      display: flex;
+      gap: 10px;
+    }
+    
+    .dark-mode .chat-box {
+      background: var(--dark-secondary);
     }
   </style>
 </head>
 
-<body>
-
+<body class="light-mode">
+  <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="logo.jpg.webp" height="60"> BizMovePro</a>
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="logo1.png" alt="CrossMovePro Logo" height="60" class="me-2">
+        BizMovePro
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
-          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#"><i class="fas fa-home me-2"></i>Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#features"><i class="fas fa-star me-2"></i>Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services"><i class="fas fa-cogs me-2"></i>Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials"><i class="fas fa-comments me-2"></i>Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq"><i class="fas fa-question-circle me-2"></i>FAQ</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
-              More
+              <i class="fas fa-ellipsis-h me-2"></i>More
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#contact">Contact</a></li>
@@ -160,325 +479,1230 @@
             </ul>
           </li>
         </ul>
-        <button class="btn btn-outline-dark toggle-btn ms-3" onclick="toggleTheme()">🌙</button>
+        <button class="btn theme-toggle ms-3" onclick="toggleTheme()">🌙</button>
       </div>
     </div>
   </nav>
-  <script>
-    function toggleTheme() {
-      const body = document.body;
-      const isDarkMode = body.classList.toggle("dark-mode");
+  
 
-      document.querySelector(".toggle-btn").innerText = isDarkMode ? "☀️" : "🌙";
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h1 class="display-4 fw-bold mb-4">BizMovePro – Smart & Seamless Business Relocation</h1>
+          <p class="lead mb-4" style="font-weight: bold;">At BizMovePro, we specialize in hassle-free office and startup relocations, ensuring your business moves efficiently without disruptions. Whether you're a new startup setting up your first office or an established company transitioning to a larger workspace, we provide professional moving, packing, and setup services tailored to your needs.</p>
+          <!-- Replace only the buttons div in your hero section with this code -->
+<div class="d-flex gap-3">
+  <button type="button" class="btn btn-primary btn-lg px-4 moving-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">
+    <i class="fas fa-truck-moving me-2"></i>Book Your Move Now
+  </button>
+  <button type="button" class="btn btn-outline-primary btn-lg px-4 contact-btn" onclick="window.location.href='tel:7302530950'">
+    <i class="fas fa-phone-alt me-2"></i>Call Now
+  </button>
+</div>
 
+<style>
+/* Add this CSS to your existing style section */
+.moving-btn {
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(78, 140, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
 
-      localStorage.setItem("theme", isDarkMode ? "dark" : "light");
-    }
+.moving-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(78, 140, 255, 0.4);
+  background-color: #3a7bff;
+}
 
+.moving-btn:active {
+  transform: translateY(1px);
+}
 
-    (function () {
-      if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark-mode");
-        document.querySelector(".toggle-btn").innerText = "☀️";
-      }
-    })();
-  </script>
+.contact-btn {
+  border: 2px solid var(--primary-color);
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  color: var(--primary-color);
+}
 
-  <div class="px-4 pt-5 my-5 text-center border-bottom">
-    <h1 class="display-4 fw-bold text-primary">BizMovePro – Smart & Seamless Business Relocation</h1>
-    <div class="col-lg-6 mx-auto">
-      <p class="lead mb-4">At BizMovePro, we specialize in hassle-free office and startup relocations, ensuring your business moves efficiently without disruptions. Whether you’re a new startup setting up your first office or an established company transitioning to a larger workspace, we provide professional moving, packing, and setup services tailored to your needs.</p>
-      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-        <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3" fdprocessedid="gkcz4p">Book Your Move Now</button>
-        <button type="button" class="btn btn-outline-secondary btn-lg px-4" fdprocessedid="9m5qwq">Contact Us</button>
+.contact-btn:hover {
+  background-color: rgba(78, 140, 255, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(78, 140, 255, 0.2);
+}
+
+.contact-btn:active {
+  transform: translateY(1px);
+}
+
+/* Dark mode adjustments */
+.dark-mode .contact-btn {
+  color: var(--text-light);
+  border-color: var(--text-light);
+}
+
+.dark-mode .contact-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+</style>
+        </div>
+        <div class="col-lg-6 mt-5 mt-lg-0">
+          <img src="movingvanlogo.webp" class="img-fluid rounded shadow-lg" alt="Moving Van" loading="lazy">
+        </div>
       </div>
     </div>
-    <div class="overflow-hidden" style="max-height: 80vh;">
-      <div class="container px-5">
-        <img src="movingvanlogo.webp" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
-      </div>
-    </div>
-  </div>
-  <div class="container px-4 py-5" id="featured-3">
-    <h2 class="pb-2 border-bottom">Why Choose BizMovePro?</h2>
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-      <div class="feature col">
-        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+  </section>
 
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-event" viewBox="0 0 16 16">
-            <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
-            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
-          </svg>
-        </div>
-        <h3 class="fs-2 text-primary">AI-Powered Moving Planner </h3>
-        <p>🔹 Get personalized moving plans based on your office size, location, and needs.</p>
-        <p>🔹 AI-driven time & cost estimation to help businesses budget efficiently.</p>
-        <a href="#" class="icon-link">
-          Pack your dreams—we’ll take care of the rest >
-          <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
-        </a>
-      </div>
-      <div class="feature col">
-        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pin-map-fill" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8z" />
-            <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z" />
-          </svg>
-
-        </div>
-        <h3 class="fs-2 text-primary">Smart Tracking & Real-Time Updates 📍📦</h3>
-        <p>🔹 Track your office equipment & furniture in real-time via our dashboard.</p>
-        <p> 🔹 Instant notifications for pickup, transit, and delivery status.</p>
-        <a href="#" class="icon-link">
-          Pack your dreams—we’ll take care of the rest >
-          <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
-        </a>
-      </div>
-      <div class="feature col">
-        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-          <img src="bus-front.svg">
-        </div>
-        <h3 class="fs-2 text-primary">Zero-Downtime Express Moving 🚛⚡</h3>
-        <p>🔹 Overnight & weekend moving services to minimize business disruption.</p>
-        <p>🔹 Quick setup assistance for workstations, IT infrastructure, and office furniture.</p>
-        <a href="#" class="icon-link">
-          Pack your dreams—we’ll take care of the rest >
-          <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
-        </a>
-      </div>
-    </div>
-  </div>
-  <section id="services" class="py-5 bg-light">
+  <!-- Features Section -->
+  <!-- Features Section -->
+<section id="features" class="py-5">
   <div class="container">
-    <h2 class="text-center mb-5">Our Services</h2>
+    <div class="text-center mb-5">
+      <h2 class="section-title display-5 fw-bold mb-3">Why Choose BizMovePro?</h2>
+      <p class="lead text-muted">Innovative solutions for seamless business relocations</p>
+    </div>
     <div class="row g-4">
-      <!-- Service 1 -->
       <div class="col-md-4">
-        <div class="card h-100 text-center shadow-sm">
-          <div class="card-body">
-            <i class="fas fa-truck fa-3x text-primary mb-3"></i>
-            <h5 class="card-title">Office Relocation</h5>
-            <p class="card-text">Seamless office relocation services to ensure zero downtime for your business.</p>
+        <div class="card h-100 border-0 shadow-sm feature-card">
+          <div class="card-body p-4 text-center">
+            <div class="feature-icon mx-auto">
+              <i class="fas fa-calendar-alt fa-2x"></i>
+            </div>
+            <h3 class="h4 my-3">AI-Powered Moving Planner</h3>
+            <ul class="list-unstyled text-start">
+              <li class="mb-2 d-flex">
+                <i class="fas fa-check-circle text-success mt-1 me-2"></i>
+                <span>Get personalized moving plans based on your office size, location, and needs</span>
+              </li>
+              <li class="d-flex">
+                <i class="fas fa-check-circle text-success mt-1 me-2"></i>
+                <span>AI-driven time & cost estimation to help businesses budget efficiently</span>
+              </li>
+            </ul>
+            <a href="#" class="feature-link mt-3" onclick="showFeatureDemo('ai-planner')">
+              <span>See it in action</span>
+              <i class="fas fa-play-circle ms-2"></i>
+            </a>
           </div>
         </div>
       </div>
-      <!-- Service 2 -->
+      
       <div class="col-md-4">
-        <div class="card h-100 text-center shadow-sm">
-          <div class="card-body">
-            <i class="fas fa-box-open fa-3x text-primary mb-3"></i>
-            <h5 class="card-title">Packing & Unpacking</h5>
-            <p class="card-text">Professional packing and unpacking services to keep your items safe and secure.</p>
+        <div class="card h-100 border-0 shadow-sm feature-card">
+          <div class="card-body p-4 text-center">
+            <div class="feature-icon mx-auto">
+              <i class="fas fa-map-marked-alt fa-2x"></i>
+            </div>
+            <h3 class="h4 my-3">Smart Tracking & Updates</h3>
+            <ul class="list-unstyled text-start">
+              <li class="mb-2 d-flex">
+                <i class="fas fa-check-circle text-success mt-1 me-2"></i>
+                <span>Track your office equipment & furniture in real-time via our dashboard</span>
+              </li>
+              <li class="d-flex">
+                <i class="fas fa-check-circle text-success mt-1 me-2"></i>
+                <span>Instant notifications for pickup, transit, and delivery status</span>
+              </li>
+            </ul>
+            <a href="#" class="feature-link mt-3" onclick="showFeatureDemo('tracking')">
+              <span>View demo</span>
+              <i class="fas fa-external-link-alt ms-2"></i>
+            </a>
           </div>
         </div>
       </div>
-      <!-- Service 3 -->
+      
       <div class="col-md-4">
-        <div class="card h-100 text-center shadow-sm">
-          <div class="card-body">
-            <i class="fas fa-map-marker-alt fa-3x text-primary mb-3"></i>
-            <h5 class="card-title">Real-Time Tracking</h5>
-            <p class="card-text">Track your move in real-time with instant updates and notifications.</p>
-          </div>
-        </div>
-      </div>
-      <!-- Service 4 -->
-      <div class="col-md-4">
-        <div class="card h-100 text-center shadow-sm">
-          <div class="card-body">
-            <i class="fas fa-clock fa-3x text-primary mb-3"></i>
-            <h5 class="card-title">Overnight Moving</h5>
-            <p class="card-text">Minimize disruptions with our overnight and weekend moving services.</p>
-          </div>
-        </div>
-      </div>
-      <!-- Service 5 -->
-      <div class="col-md-4">
-        <div class="card h-100 text-center shadow-sm">
-          <div class="card-body">
-            <i class="fas fa-cogs fa-3x text-primary mb-3"></i>
-            <h5 class="card-title">Setup Assistance</h5>
-            <p class="card-text">Quick setup for workstations, IT infrastructure, and office furniture.</p>
-          </div>
-        </div>
-      </div>
-      <!-- Service 6 -->
-      <div class="col-md-4">
-        <div class="card h-100 text-center shadow-sm">
-          <div class="card-body">
-            <i class="fas fa-handshake fa-3x text-primary mb-3"></i>
-            <h5 class="card-title">Custom Solutions</h5>
-            <p class="card-text">Tailored moving solutions to meet your unique business needs.</p>
+        <div class="card h-100 border-0 shadow-sm feature-card">
+          <div class="card-body p-4 text-center">
+            <div class="feature-icon mx-auto">
+              <i class="fas fa-bolt fa-2x"></i>
+            </div>
+            <h3 class="h4 my-3">Zero-Downtime Moving</h3>
+            <ul class="list-unstyled text-start">
+              <li class="mb-2 d-flex">
+                <i class="fas fa-check-circle text-success mt-1 me-2"></i>
+                <span>Overnight & weekend moving services to minimize business disruption</span>
+              </li>
+              <li class="d-flex">
+                <i class="fas fa-check-circle text-success mt-1 me-2"></i>
+                <span>Quick setup assistance for workstations, IT infrastructure, and office furniture</span>
+              </li>
+            </ul>
+            <a href="#" class="feature-link mt-3" onclick="showFeatureDemo('downtime')">
+              <span>How it works</span>
+              <i class="fas fa-info-circle ms-2"></i>
+            </a>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-  <div class="container d-flex justify-content-center">
-    <div id="carouselExampleIndicators" class="carousel slide" style="max-width: 65vw; max-height: 65vh;">
 
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+<style>
+/* Features Section Enhancements */
+.feature-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 8px 15px;
+  border-radius: 30px;
+  background: rgba(78, 140, 255, 0.1);
+}
+
+.feature-link:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(78, 140, 255, 0.2);
+}
+
+.feature-link i {
+  transition: transform 0.3s ease;
+}
+
+.feature-link:hover i {
+  transform: scale(1.2);
+}
+</style>
+
+<script>
+function showFeatureDemo(feature) {
+  // Implement feature demo modal or animation
+  switch(feature) {
+    case 'ai-planner':
+      alert("Opening interactive AI Moving Planner demo");
+      // window.open('demo-ai-planner.html', '_blank');
+      break;
+    case 'tracking':
+      alert("Showing Real-Time Tracking demo");
+      // window.open('demo-tracking.html', '_blank');
+      break;
+    case 'downtime':
+      alert("Playing Zero-Downtime Moving explainer video");
+      // window.open('video-downtime.html', '_blank');
+      break;
+  }
+}
+</script>
+<!-- Add after Features section -->
+<section id="calculator" class="py-5">
+  <div class="container">
+    <h2 class="section-title">Moving Cost Calculator</h2>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <form id="movingCalculator">
+              <div class="mb-3">
+                <label class="form-label">Office Size (sq ft)</label>
+                <input type="range" class="form-range" min="500" max="10000" step="100" id="officeSize">
+                <div class="d-flex justify-content-between">
+                  <span>500 sq ft</span>
+                  <span id="sizeValue">2750 sq ft</span>
+                  <span>10,000 sq ft</span>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Distance (miles)</label>
+                <input type="number" class="form-control" id="distance" value="10" min="1">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Additional Services</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="packing">
+                  <label class="form-check-label" for="packing">Packing Service (+$200)</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="storage">
+                  <label class="form-check-label" for="storage">Storage (+$150/month)</label>
+                </div>
+              </div>
+              <button type="button" class="btn btn-primary" onclick="calculateCost()">Calculate</button>
+            </form>
+          </div>
+        </div>
       </div>
-
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="family.jpg" class="d-block w-100" style="max-height: 65vh; object-fit: cover;" alt="Family">
-        </div>
-        <div class="carousel-item">
-          <img src="couple.jpg" class="d-block w-100" style="max-height: 65vh; object-fit: cover;" alt="Couple">
-        </div>
-        <div class="carousel-item">
-          <img src="dog.jpg" class="d-block w-100" style="max-height: 65vh; object-fit: cover;" alt="Dog">
+      <div class="col-lg-6">
+        <div class="card shadow-sm bg-primary text-white">
+          <div class="card-body text-center p-5">
+            <h3 style="color: #ffffff;">Estimated Cost</h3>
+            <div class="display-4 fw-bold my-4" id="estimatedCost" style="color: #ffffff;">$0</div>
+            <p class="mb-4" >This is an estimate. Contact us for exact pricing.</p>
+            <a href="#contact" class="btn btn-light">Get Exact Quote</a>
+          </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
+<script>
+function calculateCost() {
+  const size = document.getElementById('officeSize').value;
+  const distance = document.getElementById('distance').value;
+  const packing = document.getElementById('packing').checked;
+  const storage = document.getElementById('storage').checked;
+  
+  let cost = size * 0.5 + distance * 20;
+  if (packing) cost += 200;
+  if (storage) cost += 150;
+  
+  document.getElementById('estimatedCost').textContent = '$' + cost.toLocaleString();
+}// Enhance calculator with Indian cities
+const indianCities = {
+  "Delhi": { baseRate: 50000 },
+  "Mumbai": { baseRate: 60000 },
+  "Bangalore": { baseRate: 55000 },
+  "Hyderabad": { baseRate: 45000 }
+};
 
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
+function calculateIndianMove() {
+  const fromCity = document.getElementById('fromCity').value;
+  const toCity = document.getElementById('toCity').value;
+  // Calculate based on distance between selected cities
+}
+</script>
+  <!-- Services Section -->
+ <!-- Add above services row -->
+
+<section id="services" class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="section-title display-5 fw-bold">Our Premium Services</h2>
+      <p class="lead text-muted">Comprehensive solutions for all your business relocation needs</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 service-card" onclick="showServiceDetails('Office Relocation')">
+          <div class="card-body text-center p-4">
+            <div class="service-icon-wrapper">
+              <div class="service-icon">
+                <i class="fas fa-truck"></i>
+              </div>
+            </div>
+            <h4 class="card-title my-3">Office Relocation</h4>
+            <p class="card-text">Complete office shifting with zero downtime guarantee.</p>
+            <div class="service-highlights">
+              <span class="badge bg-light text-dark me-1"><i class="fas fa-clock me-1"></i>24/7 Support</span>
+              <span class="badge bg-light text-dark"><i class="fas fa-shield-alt me-1"></i>Insurance</span>
+            </div>
+            <div class="service-cta mt-3">
+              <button class="btn btn-sm btn-outline-primary">Learn More</button>
+              <button class="btn btn-sm btn-primary ms-2">Book Now</button>
+            </div>
+          </div>
+          <div class="service-ribbon">Most Popular</div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="card h-100 service-card" onclick="showServiceDetails('Packing Services')">
+          <div class="card-body text-center p-4">
+            <div class="service-icon-wrapper">
+              <div class="service-icon bg-warning bg-opacity-10 text-warning">
+                <i class="fas fa-box-open"></i>
+              </div>
+            </div>
+            <h4 class="card-title my-3">Packing Services</h4>
+            <p class="card-text">Professional packing with premium materials for complete safety.</p>
+            <div class="service-highlights">
+              <span class="badge bg-light text-dark me-1"><i class="fas fa-boxes me-1"></i>Custom Crating</span>
+              <span class="badge bg-light text-dark"><i class="fas fa-tags me-1"></i>Inventory</span>
+            </div>
+            <div class="service-cta mt-3">
+              <button class="btn btn-sm btn-outline-primary">Learn More</button>
+              <button class="btn btn-sm btn-primary ms-2">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="card h-100 service-card" onclick="showServiceDetails('IT Relocation')">
+          <div class="card-body text-center p-4">
+            <div class="service-icon-wrapper">
+              <div class="service-icon bg-info bg-opacity-10 text-info">
+                <i class="fas fa-server"></i>
+              </div>
+            </div>
+            <h4 class="card-title my-3">IT Relocation</h4>
+            <p class="card-text">Specialized handling of servers, workstations and network equipment.</p>
+            <div class="service-highlights">
+              <span class="badge bg-light text-dark me-1"><i class="fas fa-ethernet me-1"></i>Network Setup</span>
+              <span class="badge bg-light text-dark"><i class="fas fa-database me-1"></i>Data Security</span>
+            </div>
+            <div class="service-cta mt-3">
+              <button class="btn btn-sm btn-outline-primary">Learn More</button>
+              <button class="btn btn-sm btn-primary ms-2">Book Now</button>
+            </div>
+          </div>
+          <div class="service-ribbon bg-success">New</div>
+        </div>
+      </div>
+      
+      <!-- Add 3 more service cards following the same pattern -->
+    </div>
+  </div>
+</section>
+
+<style>
+/* Services Section Styles */
+.service-card {
+  position: relative;
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.service-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 2rem;
+  background: rgba(78, 140, 255, 0.1);
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1);
+  background: var(--primary-color);
+  color: white;
+}
+
+.service-highlights .badge {
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.service-ribbon {
+  position: absolute;
+  top: 15px;
+  right: -25px;
+  background: var(--secondary-color);
+  color: white;
+  padding: 5px 30px;
+  transform: rotate(45deg);
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-align: center;
+  width: 120px;
+}
+
+.dark-mode .service-card {
+  background: var(--dark-secondary);
+}
+
+.dark-mode .service-highlights .badge {
+  background: #333 !important;
+  color: #eee !important;
+}
+</style>
+
+<script>
+function showServiceDetails(serviceName) {
+  // You can implement a modal or page redirect here
+  console.log("Showing details for: " + serviceName);
+  // For now, just show an alert
+  alert(`You clicked on ${serviceName}. This would open detailed service information.`);
+}
+</script>
+<!-- Add after services section -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <h2 class="section-title text-center mb-5">Service Comparison</h2>
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead class="table-primary">
+          <tr>
+            <th>Service</th>
+            <th>Standard</th>
+            <th>Premium</th>
+            <th>Enterprise</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Office Relocation</td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-check text-success"></i></td>
+          </tr>
+          <tr>
+            <td>IT Equipment Handling</td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-check text-success"></i> <span class="badge bg-info">Expert Team</span></td>
+          </tr>
+          <!-- Add more rows -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<!-- Add after Services Section -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title">We Serve Across India</h2>
+    <div class="row g-4">
+      <div class="col-md-3 col-6">
+        <div class="city-card text-center p-3">
+          <i class="fas fa-city fa-2x mb-2"></i>
+          <h5>Delhi NCR</h5>
+          <small>Delhi, Noida, Gurgaon, Faridabad</small>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="city-card text-center p-3">
+          <i class="fas fa-city fa-2x mb-2"></i>
+          <h5>Mumbai</h5>
+          <small>Mumbai, Navi Mumbai, Thane</small>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="city-card text-center p-3">
+          <i class="fas fa-city fa-2x mb-2"></i>
+          <h5>Bangalore</h5>
+          <small>Bangalore Urban & Rural</small>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="city-card text-center p-3">
+          <i class="fas fa-city fa-2x mb-2"></i>
+          <h5>Hyderabad</h5>
+          <small>Hyderabad, Secunderabad</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.city-card {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+.city-card:hover {
+  background: rgba(78, 140, 255, 0.1);
+  transform: translateY(-3px);
+}
+</style>
+  <!-- Gallery Section -->
+  <section class="py-5">
+    <div class="container">
+      <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="family.jpg" class="d-block w-100" alt="Family moving" style="object-fit: cover; height: 500px;">
+          </div>
+          <div class="carousel-item">
+            <img src="couple.jpg" class="d-block w-100" alt="Couple moving" style="object-fit: cover; height: 500px;">
+          </div>
+          <div class="carousel-item">
+            <img src="dog.jpg" class="d-block w-100" alt="Pet moving" style="object-fit: cover; height: 500px;">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <!-- Update Testimonials Section -->
+<section id="testimonials" class="testimonial py-5">
+  <div class="container">
+    <h2 class="section-title">What Our Indian Clients Say</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 testimonial-card">
+          <div class="card-body">
+            <div class="rating mb-2">
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+            </div>
+            <p class="card-text">"BizMovePro handled our Gurgaon to Noida office move flawlessly. Their team worked overnight to ensure zero business disruption."</p>
+            <div class="d-flex align-items-center mt-3">
+              <div class="me-3">
+                <i class="fas fa-user-circle fa-2x"></i>
+              </div>
+              <div>
+                <h6 class="mb-0">Rajesh Sharma</h6>
+                <small class="text-muted">Director, TechSolutions India</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 testimonial-card">
+          <div class="card-body">
+            <div class="rating mb-2">
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star-half-alt text-warning"></i>
+            </div>
+            <p class="card-text">"As a startup, we needed affordable moving. BizMovePro provided excellent service at Bangalore prices with Mumbai quality!"</p>
+            <div class="d-flex align-items-center mt-3">
+              <div class="me-3">
+                <i class="fas fa-user-circle fa-2x"></i>
+              </div>
+              <div>
+                <h6 class="mb-0">Priya Patel</h6>
+                <small class="text-muted">Founder, DesignHub India</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 testimonial-card">
+          <div class="card-body">
+            <div class="rating mb-2">
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+            </div>
+            <p class="card-text">"Our sensitive lab equipment was moved from Delhi to Hyderabad without a scratch. Highly professional team."</p>
+            <div class="d-flex align-items-center mt-3">
+              <div class="me-3">
+                <i class="fas fa-user-circle fa-2x"></i>
+              </div>
+              <div>
+                <h6 class="mb-0">Dr. Amit Kumar</h6>
+                <small class="text-muted">Research Head, BioTech Labs</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="faq py-5">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Frequently Asked Questions</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>What services does BizMovePro offer?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>We offer comprehensive office relocation services including packing, transportation, setup assistance, and real-time tracking. Our services are designed to minimize downtime and ensure a smooth transition for your business.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>How can I track my move?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>You can track your move in real-time via our customer dashboard which provides live updates on the location of your items. We also send SMS and email notifications at key milestones during the moving process.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Do you offer weekend moving services?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes, we specialize in weekend and overnight moving services to minimize disruption to your business operations. Our team is available 24/7 to accommodate your schedule.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>How far in advance should I book my move?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>We recommend booking at least 2-4 weeks in advance for optimal scheduling. However, we do accommodate last-minute moves when possible, especially for our premium clients.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>What safety measures do you follow during the move?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>We ensure the safety of your items by using high-quality packing materials, trained professionals, and secure transportation. Additionally, we offer insurance options for added peace of mind.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  
+<section id="contact" class="py-5 bg-light">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card shadow">
+          <div class="card-body p-5">
+            <h3 class="text-center mb-4">Get a Free Quote</h3>
+            <form id="quoteForm">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="col-12">
+                  <input type="text" class="form-control" name="phone" placeholder="Phone Number">
+                </div>
+                <div class="col-12">
+                  <select class="form-select" name="service" required>
+                    <option value="">Select Service</option>
+                    <option>Office Relocation</option>
+                    <option>Packing Services</option>
+                    <option>IT Equipment Moving</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <textarea class="form-control" name="message" rows="4" placeholder="Your Message"></textarea>
+                </div>
+                <div class="col-12 text-center">
+                  <button type="submit" class="btn btn-primary px-4">Send Request</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <h5>About BizMovePro</h5>
+          <p>BizMovePro makes business relocations seamless, efficient, and stress-free with smart planning, real-time tracking, and zero downtime solutions.</p>
+          <div class="social-icons mt-3">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h5>Services</h5>
+          <ul class="footer-links">
+            <li><a href="#">Office Relocation</a></li>
+            <li><a href="#">Packing Services</a></li>
+            <li><a href="#">IT Equipment Moving</a></li>
+            <li><a href="#">Storage Solutions</a></li>
+            <li><a href="#">Custom Moving Plans</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 mb-4">
+          <h5>Contact Us</h5>
+          <ul class="footer-links">
+            <li><i class="fas fa-map-marker-alt me-2"></i> 123 Business Street, Startup City</li>
+            <li><i class="fas fa-phone me-2"></i> +1 (123) 456-7890</li>
+            <li><i class="fas fa-envelope me-2"></i> support@bizmovepro.com</li>
+            <li><i class="fas fa-clock me-2"></i> Mon-Fri: 8AM-6PM</li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-6">
+          <p class="mb-0">© 2025 BizMovePro. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a href="#" class="text-decoration-none me-3">Privacy Policy</a>
+          <a href="#" class="text-decoration-none">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <div class="scroll-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Theme Toggle
+    function toggleTheme() {
+      const body = document.body;
+      const isDarkMode = body.classList.toggle("dark-mode");
+      
+      // Update button icon
+      const themeBtn = document.querySelector('.theme-toggle');
+      themeBtn.innerHTML = isDarkMode ? '☀️' : '🌙';
+      
+      // Save preference to localStorage
+      localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+    }
+    
+   
+    
+    // FAQ functionality
+    function setupFAQ() {
+      document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+          const answer = question.nextElementSibling;
+          const icon = question.querySelector('i');
+          
+          // Close all other FAQs
+          document.querySelectorAll('.faq-answer').forEach(item => {
+            if (item !== answer) {
+              item.style.display = 'none';
+              const otherIcon = item.previousElementSibling.querySelector('i');
+              otherIcon.classList.remove('fa-chevron-up');
+              otherIcon.classList.add('fa-chevron-down');
+            }
+          });
+          
+          // Toggle current FAQ
+          if (answer.style.display === 'block') {
+            answer.style.display = 'none';
+            icon.classList.remove('fa-chevron-up');
+            icon.classList.add('fa-chevron-down');
+          } else {
+            answer.style.display = 'block';
+            icon.classList.remove('fa-chevron-down');
+            icon.classList.add('fa-chevron-up');
+          }
+        });
+      });
+    }
+    
+    // Scroll to Top functionality
+    function setupScrollToTop() {
+      window.addEventListener('scroll', () => {
+        const scrollBtn = document.querySelector('.scroll-to-top');
+        if (window.scrollY > 300) {
+          scrollBtn.classList.add('visible');
+        } else {
+          scrollBtn.classList.remove('visible');
+        }
+      });
+      
+      document.querySelector('.scroll-to-top').addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+    
+    // Initialize everything when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      // Set theme from localStorage
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+        document.querySelector('.theme-toggle').innerHTML = '☀️';
+      }
+      
+      // Initialize components
+      setupFAQ();
+      setupScrollToTop();
+      
+      // Initialize chatbox
+      document.querySelector('.chat-icon').addEventListener('click', toggleChat);
+      document.querySelector('.chat-box .btn-close').addEventListener('click', toggleChat);
+    });
+    
+    // Form submissions
+    document.getElementById('bookingForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const service = document.getElementById('service').value;
+      alert(`Thank you, ${name}! Your booking for "${service}" has been received.`);
+      this.reset();
+      bootstrap.Modal.getInstance(document.getElementById('bookingModal')).hide();
+    });
+    
+    document.getElementById('quoteForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      const name = formData.get('name');
+      const service = formData.get('service');
+      alert(`Thank you, ${name}! Your request for "${service}" has been submitted.`);
+      this.reset();
+    });
+    
+    // Calculator functionality
+    function calculateCost() {
+      const size = document.getElementById('officeSize').value;
+      const distance = document.getElementById('distance').value;
+      const packing = document.getElementById('packing').checked;
+      const storage = document.getElementById('storage').checked;
+      
+      let cost = size * 0.5 + distance * 20;
+      if (packing) cost += 200;
+      if (storage) cost += 150;
+      
+      document.getElementById('estimatedCost').textContent = '$' + cost.toLocaleString();
+    }
+    
+    // Update size value display
+    document.getElementById('officeSize').addEventListener('input', function() {
+      document.getElementById('sizeValue').textContent = this.value + ' sq ft';
+    });
+  </script>
+  <!-- Live Chat Widget -->
+<div class="live-chat">
+  <div class="chat-icon" onclick="toggleChat()">
+    <i class="fas fa-comments"></i>
+  </div>
+  <div class="chat-box">
+    <div class="chat-header">
+      <h6>BizMovePro Support</h6>
+      <button class="btn-close" onclick="toggleChat()"></button>
+    </div>
+    <div class="chat-body" id="chatMessages">
+      <div class="message received">
+        <p>Hello! How can we help you today?</p>
+      </div>
+    </div>
+    <div class="chat-footer">
+      <input type="text" placeholder="Type your message..." id="chatInput">
+      <button class="btn btn-sm btn-primary" onclick="sendMessage()">
+        <i class="fas fa-paper-plane"></i>
       </button>
     </div>
   </div>
+</div>
+<!-- Add floating WhatsApp button -->
+<div class="whatsapp-float">
+  <a href="https://wa.me/919876543210" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
 
-  <!-- Testimonial Section -->
-  <section id="testimonials" class="testimonial">
-    <div class="container">
-      <h2 class="text-center mb-5">What Our Clients Say</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card p-3">
-            <p>"BizMovePro made our office relocation seamless and stress-free. Highly recommend!"</p>
-            <h5>- John Doe</h5>
-          </div>
+<style>
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #25D366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+</style>
+<style>
+.live-chat {
+  position: fixed;
+  bottom: 20px;
+  right: 90px; /* Adjusted to avoid overlap with scroll-to-top button */
+  z-index: 1000;
+}
+.chat-icon {
+  background: var(--primary-color);
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.chat-box {
+  width: 300px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  display: none; /* Hidden by default */
+}
+.chat-header {
+  padding: 15px;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chat-body {
+  height: 300px;
+  padding: 15px;
+  overflow-y: auto;
+}
+.chat-footer {
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+}
+.dark-mode .chat-box {
+  background: var(--dark-secondary);
+}
+</style>
+<script>
+   // Scroll to Top functionality
+   window.addEventListener('scroll', () => {
+        const scrollBtn = document.querySelector('.scroll-to-top');
+        if (window.scrollY > 300) {
+          scrollBtn.classList.add('visible');
+        } else {
+          scrollBtn.classList.remove('visible');
+        }
+      });
+   
+    
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  // Chatbox functionality
+   function toggleChat() {
+      const chatBox = document.querySelector('.chat-box');
+      chatBox.style.display = chatBox.style.display === 'block' ? 'none' : 'block';
+    }
+    
+    function sendMessage() {
+      const input = document.getElementById('chatInput');
+      const userMessage = input.value.trim();
+      
+      if (userMessage === '') return;
+      
+      const messages = document.getElementById('chatMessages');
+      
+      // Add user message
+      messages.innerHTML += `
+        <div class="message sent">
+          <p>${userMessage}</p>
         </div>
-        <div class="col-md-4">
-          <div class="card p-3">
-            <p>"Their AI-powered moving planner saved us so much time and money. Fantastic service!"</p>
-            <h5>- Jane Smith</h5>
+      `;
+      
+      // Bot response (simple example)
+      setTimeout(() => {
+        messages.innerHTML += `
+          <div class="message received">
+            <p>Thanks for your message! Our team will respond shortly.</p>
           </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card p-3">
-            <p>"Zero downtime during our move. Our business operations continued without a hitch!"</p>
-            <h5>- Michael Lee</h5>
+        `;
+        messages.scrollTop = messages.scrollHeight;
+      }, 500);
+      
+      input.value = '';
+    }
+    
+    // Initialize chatbox on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelector('.chat-icon').addEventListener('click', toggleChat);
+      document.querySelector('.chat-box .btn-close').addEventListener('click', toggleChat);
+    });
+    
+  </script>
+<div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="bookingModalLabel">Book Your Move</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="bookingForm">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="name" class="form-label">Your Name</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="col-md-6">
+              <label for="email" class="form-label">Your Email</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="col-md-6">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="col-md-6">
+              <label for="service" class="form-label">Select Service</label>
+              <select class="form-select" id="service" name="service" required>
+                <option value="">Choose a service</option>
+                <option value="Office Relocation">Office Relocation</option>
+                <option value="Packing Services">Packing Services</option>
+                <option value="IT Equipment Moving">IT Equipment Moving</option>
+                <option value="Storage Solutions">Storage Solutions</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label for="message" class="form-label">Additional Details</label>
+              <textarea class="form-control" id="message" name="message" rows="4" placeholder="Provide any additional details"></textarea>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section id="faq" class="faq">
-    <div class="container">
-      <h2 class="text-center mb-5">Frequently Asked Questions</h2>
-      <div class="faq-item">
-        <h5>What services does BizMovePro offer?</h5>
-        <p>We offer office relocation, packing, setup assistance, and real-time tracking services.</p>
-      </div>
-      <div class="faq-item">
-        <h5>How can I track my move?</h5>
-        <p>You can track your move in real-time via our dashboard with instant notifications.</p>
-      </div>
-      <div class="faq-item">
-        <h5>Do you offer weekend moving services?</h5>
-        <p>Yes, we provide overnight and weekend moving services to minimize business disruption.</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="container">
-  <footer class="py-5">
-    <div class="row">
-      <div class="col-6 col-md-2 mb-3">
-        <h5>About Us</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">BizMovePro makes business relocations seamless, efficient, and stress-free with smart planning, real-time tracking, and zero downtime solutions.</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md-2 mb-3">
-        <h5>Quick Links</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Home</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Services</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Terms & Conditions</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">About</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md-2 mb-3">
-        <h5>Get in Touch:</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">123 Business Street, Startup City, Country</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">+1 (123) 456-7890</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">support@bizmovepro.com</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md-2 mb-3">
-        <h5>Stay Connected</h5>
-        <h6>Follow us on:</h6>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Facebook</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">LinkedIn</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Instagram</a></li>
-        </ul>
-      </div>
-      <div class="col-md-5 offset-md-1 mb-3">
-        <form>
-          <h5>Newsletter Signup</h5>
-          <p>Stay ahead with expert moving tips, exclusive offers, and updates.</p>
-          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-            <label for="newsletter1" class="visually-hidden">Email address</label>
-            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-            <button class="btn btn-primary" type="button">Subscribe Now</button>
+          <div class="modal-footer mt-4">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit Booking</button>
           </div>
         </form>
       </div>
     </div>
-    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-      <p>© 2025 BizMovePro. All Rights Reserved.</p>
-      <ul class="list-unstyled d-flex">
-        <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="fab fa-twitter"></i></a></li>
-        <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="fab fa-instagram"></i></a></li>
-        <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="fab fa-facebook"></i></a></li>
-      </ul>
-    </div>
-  </footer>
-</div>
-
-  <!-- Scroll-to-Top Button -->
-  <div class="scroll-to-top" onclick="scrollToTop()">
-    <i class="fas fa-arrow-up"></i>
   </div>
+</div>
+<script>
+document.getElementById('bookingForm').addEventListener('submit', function (e) {
+  e.preventDefault(); // Prevent the default form submission
 
-  <script>
-    // Scroll-to-Top Button
-    const scrollToTopBtn = document.querySelector(".scroll-to-top");
-    window.addEventListener("scroll", () => {
-      scrollToTopBtn.style.display = window.scrollY > 200 ? "flex" : "none";
-    });
+  // Get form data
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const phone = document.getElementById('phone').value;
+  const service = document.getElementById('service').value;
+  const message = document.getElementById('message').value;
 
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+  // Display a confirmation message (you can replace this with an API call)
+  alert(`Thank you, ${name}! Your booking for "${service}" has been received. We will contact you shortly.`);
+
+  // Reset the form
+  document.getElementById('bookingForm').reset();
+
+  // Close the modal
+  const bookingModal = bootstrap.Modal.getInstance(document.getElementById('bookingModal'));
+  bookingModal.hide();
+});
+document.getElementById('quoteForm').addEventListener('submit', function (e) {
+  e.preventDefault(); // Prevent the default form submission
+
+  // Get form data
+  const formData = new FormData(this);
+  const name = formData.get('name');
+  const service = formData.get('service');
+
+  // Display a confirmation message
+  alert(`Thank you, ${name}! Your request for "${service}" has been submitted. We will contact you shortly.`);
+
+  // Reset the form
+  this.reset();
+});
+</script>
+<script>
+  // Chatbox functionality - Complete working solution
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize chatbox state
+    const chatBox = document.querySelector('.chat-box');
+    chatBox.style.display = 'none';
+    
+    // Toggle chatbox visibility
+    function toggleChat() {
+      if (chatBox.style.display === 'none' || chatBox.style.display === '') {
+        chatBox.style.display = 'block';
+      } else {
+        chatBox.style.display = 'none';
+      }
     }
-
-    // FAQ Toggle
-    document.querySelectorAll(".faq-item h5").forEach((faq) => {
-      faq.addEventListener("click", () => {
-        const answer = faq.nextElementSibling;
-        answer.style.display = answer.style.display === "block" ? "none" : "block";
-      });
+    
+    // Send message function
+    function sendMessage() {
+      const input = document.getElementById('chatInput');
+      const userMessage = input.value.trim();
+      
+      if (userMessage === '') return;
+      
+      const messages = document.getElementById('chatMessages');
+      
+      // Add user message
+      messages.innerHTML += `
+        <div class="message sent">
+          <p>${userMessage}</p>
+        </div>
+      `;
+      
+      // Bot response
+      setTimeout(() => {
+        messages.innerHTML += `
+          <div class="message received">
+            <p>Thanks for your message! Our team will respond shortly.</p>
+          </div>
+        `;
+        messages.scrollTop = messages.scrollHeight;
+      }, 500);
+      
+      input.value = '';
+    }
+    
+    // Event listeners
+    document.querySelector('.chat-icon').addEventListener('click', toggleChat);
+    document.querySelector('.chat-box .btn-close').addEventListener('click', toggleChat);
+    document.getElementById('chatInput').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        sendMessage();
+      }
     });
+    document.querySelector('.chat-footer button').addEventListener('click', sendMessage);
+  });
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
 </body>
-
 </html>
