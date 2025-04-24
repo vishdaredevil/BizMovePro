@@ -118,8 +118,7 @@
     document.getElementById('officeSize').addEventListener('input', function() {
       document.getElementById('sizeValue').textContent = this.value + ' sq ft';
     });
-  </script>
- <script>
+ 
 function showFeatureDemo(feature) {
   // Implement feature demo modal or animation
   switch(feature) {
@@ -137,8 +136,7 @@ function showFeatureDemo(feature) {
       break;
   }
 }
-</script>
-<script>
+
 function calculateCost() {
   const size = document.getElementById('officeSize').value;
   const distance = document.getElementById('distance').value;
@@ -163,16 +161,14 @@ function calculateIndianMove() {
   const toCity = document.getElementById('toCity').value;
   // Calculate based on distance between selected cities
 }
-</script>
-<script>
+
 function showServiceDetails(serviceName) {
   // You can implement a modal or page redirect here
   console.log("Showing details for: " + serviceName);
   // For now, just show an alert
   alert(`You clicked on ${serviceName}. This would open detailed service information.`);
 }
-</script>
-<script>
+
    // Scroll to Top functionality
    window.addEventListener('scroll', () => {
         const scrollBtn = document.querySelector('.scroll-to-top');
@@ -229,9 +225,7 @@ function showServiceDetails(serviceName) {
       document.querySelector('.chat-icon').addEventListener('click', toggleChat);
       document.querySelector('.chat-box .btn-close').addEventListener('click', toggleChat);
     });
-    
-  </script>
-<script>
+ 
 document.getElementById('bookingForm').addEventListener('submit', function (e) {
   e.preventDefault(); // Prevent the default form submission
 
@@ -266,8 +260,7 @@ document.getElementById('quoteForm').addEventListener('submit', function (e) {
   // Reset the form
   this.reset();
 });
-</script>
-<script>
+
   // Chatbox functionality - Complete working solution
   document.addEventListener('DOMContentLoaded', function() {
     // Initialize chatbox state
@@ -322,4 +315,4 @@ document.getElementById('quoteForm').addEventListener('submit', function (e) {
     });
     document.querySelector('.chat-footer button').addEventListener('click', sendMessage);
   });
-  </script>
+</script>
