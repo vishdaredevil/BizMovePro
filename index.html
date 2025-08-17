@@ -18,7 +18,6 @@
 
   <!-- Polyfill for older browsers -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-  <script src="script.js" defer></script> 
   
 </head>
 
@@ -27,7 +26,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="logo1.png" alt="CrossMovePro Logo" height="60" class="me-2">
+        <img src="logo1.png" alt="CrossMovePro Logo" height="60" class="me-2" onerror="this.onerror=null;this.src='https://via.placeholder.com/100x60?text=Logo';">
         BizMovePro
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -73,57 +72,7 @@
   </button>
 </div>
 
-<style>
-/* Add this CSS to your existing style section */
-.moving-btn {
-  background-color: var(--primary-color);
-  border: none;
-  border-radius: 50px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(78, 140, 255, 0.3);
-  position: relative;
-  overflow: hidden;
-}
 
-.moving-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(78, 140, 255, 0.4);
-  background-color: #3a7bff;
-}
-
-.moving-btn:active {
-  transform: translateY(1px);
-}
-
-.contact-btn {
-  border: 2px solid var(--primary-color);
-  border-radius: 50px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  color: var(--primary-color);
-}
-
-.contact-btn:hover {
-  background-color: rgba(78, 140, 255, 0.1);
-  transform: translateY(-3px);
-  box-shadow: 0 4px 15px rgba(78, 140, 255, 0.2);
-}
-
-.contact-btn:active {
-  transform: translateY(1px);
-}
-
-/* Dark mode adjustments */
-.dark-mode .contact-btn {
-  color: var(--text-light);
-  border-color: var(--text-light);
-}
-
-.dark-mode .contact-btn:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-</style>
         </div>
         <div class="col-lg-6 mt-5 mt-lg-0">
           <img src="movingvanlogo.webp" class="img-fluid rounded shadow-lg" alt="Moving Van" loading="lazy">
@@ -219,55 +168,9 @@
   </div>
 </section>
 
-<style>
-/* Features Section Enhancements */
-.feature-link {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-  color: var(--primary-color);
-  font-weight: 600;
-  transition: all 0.3s ease;
-  padding: 8px 15px;
-  border-radius: 30px;
-  background: rgba(78, 140, 255, 0.1);
-}
 
-.feature-link:hover {
-  background: var(--primary-color);
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(78, 140, 255, 0.2);
-}
 
-.feature-link i {
-  transition: transform 0.3s ease;
-}
 
-.feature-link:hover i {
-  transform: scale(1.2);
-}
-</style>
-
-<script>
-function showFeatureDemo(feature) {
-  // Implement feature demo modal or animation
-  switch(feature) {
-    case 'ai-planner':
-      alert("Opening interactive AI Moving Planner demo");
-      // window.open('demo-ai-planner.html', '_blank');
-      break;
-    case 'tracking':
-      alert("Showing Real-Time Tracking demo");
-      // window.open('demo-tracking.html', '_blank');
-      break;
-    case 'downtime':
-      alert("Playing Zero-Downtime Moving explainer video");
-      // window.open('video-downtime.html', '_blank');
-      break;
-  }
-}
-</script>
 <!-- Add after Features section -->
 <section id="calculator" class="py-5">
   <div class="container">
@@ -320,32 +223,7 @@ function showFeatureDemo(feature) {
   </div>
 </section>
 
-<script>
-function calculateCost() {
-  const size = document.getElementById('officeSize').value;
-  const distance = document.getElementById('distance').value;
-  const packing = document.getElementById('packing').checked;
-  const storage = document.getElementById('storage').checked;
-  
-  let cost = size * 0.5 + distance * 20;
-  if (packing) cost += 200;
-  if (storage) cost += 150;
-  
-  document.getElementById('estimatedCost').textContent = '$' + cost.toLocaleString();
-}// Enhance calculator with Indian cities
-const indianCities = {
-  "Delhi": { baseRate: 50000 },
-  "Mumbai": { baseRate: 60000 },
-  "Bangalore": { baseRate: 55000 },
-  "Hyderabad": { baseRate: 45000 }
-};
 
-function calculateIndianMove() {
-  const fromCity = document.getElementById('fromCity').value;
-  const toCity = document.getElementById('toCity').value;
-  // Calculate based on distance between selected cities
-}
-</script>
   <!-- Services Section -->
  <!-- Add above services row -->
 
@@ -429,85 +307,9 @@ function calculateIndianMove() {
   </div>
 </section>
 
-<style>
-/* Services Section Styles */
-.service-card {
-  position: relative;
-  border: none;
-  border-radius: 12px;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-  cursor: pointer;
-}
 
-.service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-}
 
-.service-icon-wrapper {
-  margin-bottom: 1.5rem;
-}
 
-.service-icon {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  font-size: 2rem;
-  background: rgba(78, 140, 255, 0.1);
-  color: var(--primary-color);
-  transition: all 0.3s ease;
-}
-
-.service-card:hover .service-icon {
-  transform: scale(1.1);
-  background: var(--primary-color);
-  color: white;
-}
-
-.service-highlights .badge {
-  font-weight: 500;
-  padding: 5px 10px;
-  border-radius: 20px;
-}
-
-.service-ribbon {
-  position: absolute;
-  top: 15px;
-  right: -25px;
-  background: var(--secondary-color);
-  color: white;
-  padding: 5px 30px;
-  transform: rotate(45deg);
-  font-size: 0.75rem;
-  font-weight: bold;
-  text-align: center;
-  width: 120px;
-}
-
-.dark-mode .service-card {
-  background: var(--dark-secondary);
-}
-
-.dark-mode .service-highlights .badge {
-  background: #333 !important;
-  color: #eee !important;
-}
-</style>
-
-<script>
-function showServiceDetails(serviceName) {
-  // You can implement a modal or page redirect here
-  console.log("Showing details for: " + serviceName);
-  // For now, just show an alert
-  alert(`You clicked on ${serviceName}. This would open detailed service information.`);
-}
-</script>
 <!-- Add after services section -->
 <section class="py-5 bg-white">
   <div class="container">
@@ -578,17 +380,7 @@ function showServiceDetails(serviceName) {
   </div>
 </section>
 
-<style>
-.city-card {
-  border: 1px solid #eee;
-  border-radius: 8px;
-  transition: all 0.3s;
-}
-.city-card:hover {
-  background: rgba(78, 140, 255, 0.1);
-  transform: translateY(-3px);
-}
-</style>
+
   <!-- Gallery Section -->
   <section class="py-5">
     <div class="container">
@@ -855,132 +647,16 @@ function showServiceDetails(serviceName) {
   </footer>
 
   <!-- Scroll to Top Button -->
-  <div class="scroll-to-top">
-    <i class="fas fa-arrow-up"></i>
-  </div>
+  <div class="scroll-to-top" id="scrollToTopBtn">
+  <svg width="48" height="48" viewBox="0 0 48 48">
+    <circle cx="24" cy="24" r="22" fill="#4285F4"/>
+    <path d="M24 16 L24 32" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+    <path d="M18 22 L24 16 L30 22" stroke="#fff" stroke-width="3" stroke-linecap="round" fill="none"/>
+  </svg>
+</div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Theme Toggle
-    function toggleTheme() {
-      const body = document.body;
-      const isDarkMode = body.classList.toggle("dark-mode");
-      
-      // Update button icon
-      const themeBtn = document.querySelector('.theme-toggle');
-      themeBtn.innerHTML = isDarkMode ? '☀️' : '🌙';
-      
-      // Save preference to localStorage
-      localStorage.setItem("theme", isDarkMode ? "dark" : "light");
-    }
-    
-   
-    
-    // FAQ functionality
-    function setupFAQ() {
-      document.querySelectorAll('.faq-question').forEach(question => {
-        question.addEventListener('click', () => {
-          const answer = question.nextElementSibling;
-          const icon = question.querySelector('i');
-          
-          // Close all other FAQs
-          document.querySelectorAll('.faq-answer').forEach(item => {
-            if (item !== answer) {
-              item.style.display = 'none';
-              const otherIcon = item.previousElementSibling.querySelector('i');
-              otherIcon.classList.remove('fa-chevron-up');
-              otherIcon.classList.add('fa-chevron-down');
-            }
-          });
-          
-          // Toggle current FAQ
-          if (answer.style.display === 'block') {
-            answer.style.display = 'none';
-            icon.classList.remove('fa-chevron-up');
-            icon.classList.add('fa-chevron-down');
-          } else {
-            answer.style.display = 'block';
-            icon.classList.remove('fa-chevron-down');
-            icon.classList.add('fa-chevron-up');
-          }
-        });
-      });
-    }
-    
-    // Scroll to Top functionality
-    function setupScrollToTop() {
-      window.addEventListener('scroll', () => {
-        const scrollBtn = document.querySelector('.scroll-to-top');
-        if (window.scrollY > 300) {
-          scrollBtn.classList.add('visible');
-        } else {
-          scrollBtn.classList.remove('visible');
-        }
-      });
-      
-      document.querySelector('.scroll-to-top').addEventListener('click', () => {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      });
-    }
-    
-    // Initialize everything when DOM is loaded
-    document.addEventListener('DOMContentLoaded', () => {
-      // Set theme from localStorage
-      if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark-mode");
-        document.querySelector('.theme-toggle').innerHTML = '☀️';
-      }
-      
-      // Initialize components
-      setupFAQ();
-      setupScrollToTop();
-      
-      // Initialize chatbox
-      document.querySelector('.chat-icon').addEventListener('click', toggleChat);
-      document.querySelector('.chat-box .btn-close').addEventListener('click', toggleChat);
-    });
-    
-    // Form submissions
-    document.getElementById('bookingForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      const service = document.getElementById('service').value;
-      alert(`Thank you, ${name}! Your booking for "${service}" has been received.`);
-      this.reset();
-      bootstrap.Modal.getInstance(document.getElementById('bookingModal')).hide();
-    });
-    
-    document.getElementById('quoteForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const formData = new FormData(this);
-      const name = formData.get('name');
-      const service = formData.get('service');
-      alert(`Thank you, ${name}! Your request for "${service}" has been submitted.`);
-      this.reset();
-    });
-    
-    // Calculator functionality
-    function calculateCost() {
-      const size = document.getElementById('officeSize').value;
-      const distance = document.getElementById('distance').value;
-      const packing = document.getElementById('packing').checked;
-      const storage = document.getElementById('storage').checked;
-      
-      let cost = size * 0.5 + distance * 20;
-      if (packing) cost += 200;
-      if (storage) cost += 150;
-      
-      document.getElementById('estimatedCost').textContent = '$' + cost.toLocaleString();
-    }
-    
-    // Update size value display
-    document.getElementById('officeSize').addEventListener('input', function() {
-      document.getElementById('sizeValue').textContent = this.value + ' sq ft';
-    });
-  </script>
+  
   <!-- Live Chat Widget -->
 <div class="live-chat">
   <div class="chat-icon" onclick="toggleChat()">
@@ -1011,72 +687,18 @@ function showServiceDetails(serviceName) {
   </a>
 </div>
 
-<style>
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background: #25D366;
-  color: white;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  z-index: 1000;
-}
-</style>
-<style>
-.live-chat {
-  position: fixed;
-  bottom: 20px;
-  right: 90px; /* Adjusted to avoid overlap with scroll-to-top button */
-  z-index: 1000;
-}
-.chat-icon {
-  background: var(--primary-color);
-  color: white;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-.chat-box {
-  width: 300px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-  display: none; /* Hidden by default */
-}
-.chat-header {
-  padding: 15px;
-  background: var(--primary-color);
-  color: white;
-  border-radius: 10px 10px 0 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.chat-body {
-  height: 300px;
-  padding: 15px;
-  overflow-y: auto;
-}
-.chat-footer {
-  padding: 10px;
-  display: flex;
-  gap: 10px;
-}
-.dark-mode .chat-box {
-  background: var(--dark-secondary);
-}
-</style>
+<script src="script.js" defer></script> 
+<script>
+  const scrollBtn = document.querySelector('.scroll-to-top');
+  window.addEventListener('scroll', function() {
+    scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+  });
+  scrollBtn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    scrollBtn.classList.add('clicked');
+    setTimeout(() => scrollBtn.classList.remove('clicked'), 400);
+  });
+</script>
+  
 </body>
 </html>
