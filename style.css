@@ -1,5 +1,4 @@
-
-    :root {
+:root {
       --primary-color: #4e8cff;
       --secondary-color: #ff4500;
       --light-bg: #f8f9fa;
@@ -10,7 +9,57 @@
       --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       --card-shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
-    
+ 
+/* Add this CSS to your existing style section */
+.moving-btn {
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(78, 140, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.moving-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(78, 140, 255, 0.4);
+  background-color: #3a7bff;
+}
+
+.moving-btn:active {
+  transform: translateY(1px);
+}
+
+.contact-btn {
+  border: 2px solid var(--primary-color);
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  color: var(--primary-color);
+}
+
+.contact-btn:hover {
+  background-color: rgba(78, 140, 255, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(78, 140, 255, 0.2);
+}
+
+.contact-btn:active {
+  transform: translateY(1px);
+}
+
+/* Dark mode adjustments */
+.dark-mode .contact-btn {
+  color: var(--text-light);
+  border-color: var(--text-light);
+}
+
+.dark-mode .contact-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
@@ -215,8 +264,16 @@
       color: #666;
     }
     
+    .faq-answer.show {
+      display: block;
+    }
+    
     .dark-mode .faq-answer {
       color: #aaa;
+    }
+    
+    .faq-question.active i {
+      transform: rotate(180deg);
     }
     
     /* Footer */
@@ -263,32 +320,27 @@
     /* Scroll-to-Top Button */
     .scroll-to-top {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: var(--primary-color);
-      color: white;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      right: 30px;
+      bottom: 40px;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s ease;
-      opacity: 0;
-      visibility: hidden;
+      z-index: 999;
+      display: none;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      border-radius: 50%;
+      background: transparent;
+      transition: opacity 0.3s;
     }
     
-    .scroll-to-top.visible {
-      opacity: 1;
-      visibility: visible;
+    .scroll-to-top svg {
+      display: block;
     }
     
-    .scroll-to-top:hover {
-      background-color: var(--secondary-color);
-      transform: translateY(-3px);
-    }
+    .scroll-to-top:active,
+.scroll-to-top.clicked {
+  box-shadow: 0 0 20px 5px #4285F4, 0 2px 8px rgba(0,0,0,0.15);
+  outline: none;
+  transition: box-shadow 0.2s;
+}
     
     /* Carousel */
     .carousel {
@@ -573,7 +625,6 @@
   background: #333 !important;
   color: #eee !important;
 }
-
 .city-card {
   border: 1px solid #eee;
   border-radius: 8px;
@@ -647,4 +698,197 @@
 }
 .dark-mode .chat-box {
   background: var(--dark-secondary);
+}
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #25D366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.live-chat {
+  position: fixed;
+  bottom: 20px;
+  right: 90px; /* Adjusted to avoid overlap with scroll-to-top button */
+  z-index: 1000;
+}
+.chat-icon {
+  background: var(--primary-color);
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.chat-box {
+  width: 300px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  display: none; /* Hidden by default */
+}
+.chat-header {
+  padding: 15px;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chat-body {
+  height: 300px;
+  padding: 15px;
+  overflow-y: auto;
+}
+.chat-footer {
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+}
+.dark-mode .chat-box {
+  background: var(--dark-secondary);
+}
+/* Features Section Enhancements */
+.feature-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 8px 15px;
+  border-radius: 30px;
+  background: rgba(78, 140, 255, 0.1);
+}
+
+.feature-link:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(78, 140, 255, 0.2);
+}
+
+.feature-link i {
+  transition: transform 0.3s ease;
+}
+
+.feature-link:hover i {
+  transform: scale(1.2);
+}
+/* Services Section Styles */
+.service-card {
+  position: relative;
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.service-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 2rem;
+  background: rgba(78, 140, 255, 0.1);
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1);
+  background: var(--primary-color);
+  color: white;
+}
+
+.service-highlights .badge {
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.service-ribbon {
+  position: absolute;
+  top: 15px;
+  right: -25px;
+  background: var(--secondary-color);
+  color: white;
+  padding: 5px 30px;
+  transform: rotate(45deg);
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-align: center;
+  width: 120px;
+}
+
+.dark-mode .service-card {
+  background: var(--dark-secondary);
+}
+
+.dark-mode .service-highlights .badge {
+  background: #333 !important;
+  color: #eee !important;
+}
+.city-card {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+.city-card:hover {
+  background: rgba(78, 140, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+
+
+
+.scroll-to-top {
+  position: fixed;
+  right: 30px;
+  bottom: 40px;
+  cursor: pointer;
+  z-index: 999;
+  display: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  border-radius: 50%;
+  background: transparent;
+  transition: opacity 0.3s;
+}
+.scroll-to-top svg {
+  display: block;
+}
+.scroll-to-top:active,
+.scroll-to-top.clicked {
+  box-shadow: 0 0 20px 5px #4285F4, 0 2px 8px rgba(0,0,0,0.15);
+  outline: none;
+  transition: box-shadow 0.2s;
 }
