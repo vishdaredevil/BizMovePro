@@ -190,7 +190,7 @@ async function handleSignUp(e) {
   const email = document.getElementById('signUpEmail').value;
   const password = document.getElementById('signUpPassword').value;
   try {
-    const res = await fetch('http://localhost:5000/api/users/register', {
+    const res = await fetch('https://bizmovepro-backend.onrender.com', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, email, password }),
