@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Dashboard - BizMovePro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css"> </head>
+<body>
+    <div class="dashboard-wrapper">
+        <nav id="sidebar" class="bg-light">
+            <div class="sidebar-header">
+                <a class="navbar-brand" href="index.html">
+                    <img src="logo1.png" alt="BizMovePro Logo" height="40" class="me-2">
+                    BizMovePro
+                </a>
+            </div>
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="dashboard.html"><i class="fas fa-th-large me-2"></i>Dashboard</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-file-invoice me-2"></i>My Quotes</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-box me-2"></i>My Bookings</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-file-alt me-2"></i>Documents</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-user-circle me-2"></i>Profile</a>
+                </li>
+                <li>
+                    <a href="#" onclick="handleLogout()"><i class="fas fa-sign-out-alt me-2"></i>Logout</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+                    <div class="d-flex align-items-center ms-auto">
+                        <span id="welcomeMessage" class="navbar-text me-3">Welcome, Client!</span>
+                        <button class="btn btn-danger" onclick="handleLogout()">Logout</button>
+                    </div>
+                </div>
+            </nav>
+
+            <main class="p-4">
+                <h2 class="display-6">Your Dashboard</h2>
+                <hr>
+
+                <div class="card mb-4 shadow">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0"><i class="fas fa-truck me-2"></i>Current Move Status</h5>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-title">Relocation from Delhi to Mumbai</h6>
+                        <p class="text-muted">Booking ID: #BZM-789123</p>
+                        <div class="progress" style="height: 25px;">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">In Transit</div>
+                        </div>
+                        <div class="d-flex justify-content-between mt-2 small text-muted">
+                            <span>Planning</span>
+                            <span>Packing</span>
+                            <span>In Transit</span>
+                            <span>Setup</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="card shadow-sm">
+                            <div class="card-header">
+                                <h5 class="mb-0"><i class="fas fa-calendar-alt me-2"></i>Upcoming Bookings</h5>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-hover mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Service</th>
+                                            <th>From</th>
+                                            <th>To</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2025-09-15</td>
+                                            <td>IT Relocation</td>
+                                            <td>Bangalore</td>
+                                            <td>Pune</td>
+                                            <td><span class="badge bg-warning">Confirmed</span></td>
+                                        </tr>
+                                        </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="card shadow-sm">
+                            <div class="card-header">
+                                <h5 class="mb-0"><i class="fas fa-bolt me-2"></i>Quick Actions</h5>
+                            </div>
+                            <div class="list-group list-group-flush">
+                                <a href="index.html#contact" class="list-group-item list-group-item-action">Request a New Quote</a>
+                                <a href="#" class="list-group-item list-group-item-action">Contact Support</a>
+                                <a href="#" class="list-group-item list-group-item-action">View Documents</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

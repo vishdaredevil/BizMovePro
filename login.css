@@ -1,0 +1,84 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.login-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Left Column: Branding */
+.login-visual {
+    flex: 1;
+    background: linear-gradient(rgba(74, 144, 226, 0.8), rgba(74, 144, 226, 0.9)), url('https://www.gstatic.com/gemini/bizmovepro/planning.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+}
+
+.login-logo {
+    display: flex;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    margin-bottom: auto; /* Pushes logo to the top */
+}
+
+.login-logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.visual-content {
+    margin-bottom: auto; /* Pushes content to the bottom */
+}
+
+.visual-content h2 {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* Right Column: Form */
+.login-form-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.form-content {
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-content h3 {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    padding: 12px 15px;
+    border-radius: 8px;
+}
+
+.btn-primary {
+    padding: 12px 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .login-visual {
+        display: none; /* Hide the visual column on mobile */
+    }
+    .login-form-wrapper {
+        flex-basis: 100%;
+    }
+}
