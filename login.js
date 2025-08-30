@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const password = document.getElementById('password').value;
 
         try {
-            const response = await fetch('http://localhost:5000/api/users/login', {
+            const response = await fetch('https://bizmovepro-backend.onrender.com', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password })
@@ -26,4 +26,5 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('An error occurred. Please try again.');
         }
     });
+
 });
