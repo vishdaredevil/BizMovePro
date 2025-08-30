@@ -15,7 +15,8 @@
   <meta name="description" content="BizMovePro offers seamless business relocation services with advanced planning, real-time tracking, and zero downtime solutions.">
   <meta name="author" content="BizMovePro Team">
   <meta name="keywords" content="business relocation, office moving, packing services, IT relocation, CrossMovePro">
-
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Polyfill for older browsers -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
   
@@ -24,62 +25,60 @@
 <body class="light-mode">
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="logo1.png" alt="CrossMovePro Logo" height="60" class="me-2" onerror="this.onerror=null;this.src='https://via.placeholder.com/100x60?text=Logo';">
-        BizMovePro
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="#"><i class="fas fa-home me-2"></i>Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#features"><i class="fas fa-star me-2"></i>Features</a></li>
-          <li class="nav-item"><a class="nav-link" href="#services"><i class="fas fa-cogs me-2"></i>Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#testimonials"><i class="fas fa-comments me-2"></i>Testimonials</a></li>
-          <li class="nav-item"><a class="nav-link" href="#faq"><i class="fas fa-question-circle me-2"></i>FAQ</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
-              <i class="fas fa-ellipsis-h me-2"></i>More
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#contact">Contact</a></li>
-              <li><a class="dropdown-item" href="#newsletter">Newsletter</a></li>
-            </ul>
-          </li>
-        </ul>
-        <button class="btn theme-toggle ms-3" onclick="toggleTheme()">🌙</button>
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="logo1.png" alt="BizMovePro Logo" height="60" class="me-2">
+      BizMovePro
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link " href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#advantage">Advantages</a></li>
+        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+      <div class="d-flex align-items-center" id="auth-buttons">
+          <a href="login.html" class="btn btn-outline-primary me-2">Login</a>
+          <a href="signup.html" class="btn btn-primary">Sign Up</a>
       </div>
+      <div id="user-section" style="display: none;">
+          <a href="dashboard.html" class="btn btn-outline-primary me-2">Dashboard</a>
+          <button class="btn btn-primary" onclick="handleLogout()">Logout</button>
+      </div>
+      <button class="btn theme-toggle ms-3">🌙</button>
     </div>
-  </nav>
-  
+  </div>
+</nav>
 
   <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6">
-          <h1 class="display-4 fw-bold mb-4">BizMovePro – Smart & Seamless Business Relocation</h1>
-          <p class="lead mb-4" style="font-weight: bold;">At BizMovePro, we specialize in hassle-free office and startup relocations, ensuring your business moves efficiently without disruptions. Whether you're a new startup setting up your first office or an established company transitioning to a larger workspace, we provide professional moving, packing, and setup services tailored to your needs.</p>
-          <!-- Replace only the buttons div in your hero section with this code -->
-<div class="d-flex gap-3">
-  <button type="button" class="btn btn-primary btn-lg px-4 moving-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">
-    <i class="fas fa-truck-moving me-2"></i>Book Your Move Now
-  </button>
-  <button type="button" class="btn btn-outline-primary btn-lg px-4 contact-btn" onclick="window.location.href='tel:7302530950'">
-    <i class="fas fa-phone-alt me-2"></i>Call Now
-  </button>
-</div>
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
 
+        <h1 class="display-4 fw-bold mb-4">Seamless Business Relocation, Zero Downtime.</h1>
+        <p class="lead mb-4">At BizMovePro, we specialize in <strong>hassle-free office and startup relocations</strong>, ensuring your business moves efficiently without disruptions.</p>
+        <div class="d-flex gap-3">
+          <button type="button" class="btn btn-primary btn-lg px-4 moving-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">
+            <i class="fas fa-truck-moving me-2"></i>Book Your Move Now
+          </button>
+          <button type="button" class="btn btn-outline-primary btn-lg px-4 contact-btn" onclick="window.location.href='tel:7302530950'">
+            <i class="fas fa-phone-alt me-2"></i>Call Now
+          </button>
+        </div>
 
-        </div>
-        <div class="col-lg-6 mt-5 mt-lg-0">
-          <img src="movingvanlogo.webp" class="img-fluid rounded shadow-lg" alt="Moving Van" loading="lazy">
-        </div>
+      </div>
+      <div class="col-lg-6 mt-5 mt-lg-0">
+        <img src="movingvanlogo.webp" class="img-fluid rounded shadow-lg" alt="Moving Van" loading="lazy">
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Features Section -->
   <!-- Features Section -->
@@ -107,10 +106,10 @@
                 <span>AI-driven time & cost estimation to help businesses budget efficiently</span>
               </li>
             </ul>
-            <a href="#" class="feature-link mt-3" onclick="showFeatureDemo('ai-planner')">
-              <span>See it in action</span>
-              <i class="fas fa-play-circle ms-2"></i>
-            </a>
+            <button type="button" class="feature-link mt-3" data-bs-toggle="modal" data-bs-target="#aiPlannerModal">
+  <span>See it in action</span>
+  <i class="fas fa-play-circle ms-2"></i>
+</button>
           </div>
         </div>
       </div>
@@ -132,10 +131,10 @@
                 <span>Instant notifications for pickup, transit, and delivery status</span>
               </li>
             </ul>
-            <a href="#" class="feature-link mt-3" onclick="showFeatureDemo('tracking')">
-              <span>View demo</span>
-              <i class="fas fa-external-link-alt ms-2"></i>
-            </a>
+            <button type="button" class="feature-link mt-3" data-bs-toggle="modal" data-bs-target="#trackingModal">
+  <span>View demo</span>
+  <i class="fas fa-external-link-alt ms-2"></i>
+</button>
           </div>
         </div>
       </div>
@@ -157,10 +156,10 @@
                 <span>Quick setup assistance for workstations, IT infrastructure, and office furniture</span>
               </li>
             </ul>
-            <a href="#" class="feature-link mt-3" onclick="showFeatureDemo('downtime')">
-              <span>How it works</span>
-              <i class="fas fa-info-circle ms-2"></i>
-            </a>
+            <button type="button" class="feature-link mt-3" data-bs-toggle="modal" data-bs-target="#downtimeModal">
+  <span>How it works</span>
+  <i class="fas fa-info-circle ms-2"></i>
+</button>
           </div>
         </div>
       </div>
@@ -168,8 +167,41 @@
   </div>
 </section>
 
-
-
+<section id="process" class="py-5 text-center">
+  <div class="container">
+    <h2 class="section-title mb-5">Our Smart Moving Process</h2>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <h5 class="mt-3">Plan with AI</h5>
+          <p class="text-muted">We generate a custom, data-driven plan for a seamless move.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <h5 class="mt-3">Pack & Secure</h5>
+          <p class="text-muted">Our professional team securely packs and inventories all assets.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <h5 class="mt-3">Track in Real-Time</h5>
+          <p class="text-muted">You monitor your move's progress with our live tracking dashboard.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <h5 class="mt-3">Setup & Launch</h5>
+          <p class="text-muted">We unpack and set up your new office, ensuring zero downtime.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Add after Features section -->
 <section id="calculator" class="py-5">
@@ -185,7 +217,7 @@
                 <input type="range" class="form-range" min="500" max="10000" step="100" id="officeSize">
                 <div class="d-flex justify-content-between">
                   <span>500 sq ft</span>
-                  <span id="sizeValue">2750 sq ft</span>
+                  <span id="sizeValue">5250 sq ft</span>
                   <span>10,000 sq ft</span>
                 </div>
               </div>
@@ -204,7 +236,7 @@
                   <label class="form-check-label" for="storage">Storage (+$150/month)</label>
                 </div>
               </div>
-              <button type="button" class="btn btn-primary" onclick="calculateCost()">Calculate</button>
+              <button type="button" class="btn btn-primary">Calculate</button>
             </form>
           </div>
         </div>
@@ -235,74 +267,137 @@
     </div>
     <div class="row g-4">
       <div class="col-md-4">
-        <div class="card h-100 service-card" onclick="showServiceDetails('Office Relocation')">
-          <div class="card-body text-center p-4">
-            <div class="service-icon-wrapper">
-              <div class="service-icon">
-                <i class="fas fa-truck"></i>
-              </div>
-            </div>
-            <h4 class="card-title my-3">Office Relocation</h4>
-            <p class="card-text">Complete office shifting with zero downtime guarantee.</p>
-            <div class="service-highlights">
-              <span class="badge bg-light text-dark me-1"><i class="fas fa-clock me-1"></i>24/7 Support</span>
-              <span class="badge bg-light text-dark"><i class="fas fa-shield-alt me-1"></i>Insurance</span>
-            </div>
-            <div class="service-cta mt-3">
-              <button class="btn btn-sm btn-outline-primary">Learn More</button>
-              <button class="btn btn-sm btn-primary ms-2">Book Now</button>
-            </div>
+    <div class="card h-100 service-card">
+      <div class="card-body text-center p-4">
+        <div class="service-icon-wrapper">
+          <div class="service-icon">
+            <i class="fas fa-truck"></i>
           </div>
-          <div class="service-ribbon">Most Popular</div>
+        </div>
+        <h4 class="card-title my-3">Office Relocation</h4>
+        <p class="card-text">Complete office shifting with zero downtime guarantee.</p>
+        <div class="service-highlights">
+          <span class="badge bg-light text-dark me-1"><i class="fas fa-clock me-1"></i>24/7 Support</span>
+          <span class="badge bg-light text-dark"><i class="fas fa-shield-alt me-1"></i>Insurance</span>
+        </div>
+        <div class="service-cta mt-3">
+          <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#officeRelocationModal">Learn More</button>
+          <button class="btn btn-sm btn-primary ms-2 book-service-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Now</button>
         </div>
       </div>
+      <div class="service-ribbon">Most Popular</div>
+    </div>
+</div>
       
       <div class="col-md-4">
-        <div class="card h-100 service-card" onclick="showServiceDetails('Packing Services')">
-          <div class="card-body text-center p-4">
-            <div class="service-icon-wrapper">
-              <div class="service-icon bg-warning bg-opacity-10 text-warning">
-                <i class="fas fa-box-open"></i>
-              </div>
-            </div>
-            <h4 class="card-title my-3">Packing Services</h4>
-            <p class="card-text">Professional packing with premium materials for complete safety.</p>
-            <div class="service-highlights">
-              <span class="badge bg-light text-dark me-1"><i class="fas fa-boxes me-1"></i>Custom Crating</span>
-              <span class="badge bg-light text-dark"><i class="fas fa-tags me-1"></i>Inventory</span>
-            </div>
-            <div class="service-cta mt-3">
-              <button class="btn btn-sm btn-outline-primary">Learn More</button>
-              <button class="btn btn-sm btn-primary ms-2">Book Now</button>
-            </div>
+    <div class="card h-100 service-card">
+      <div class="card-body text-center p-4">
+        <div class="service-icon-wrapper">
+          <div class="service-icon bg-warning bg-opacity-10 text-warning">
+            <i class="fas fa-box-open"></i>
           </div>
         </div>
+        <h4 class="card-title my-3">Packing Services</h4>
+        <p class="card-text">Professional packing with premium materials for complete safety.</p>
+        <div class="service-highlights">
+          <span class="badge bg-light text-dark me-1"><i class="fas fa-boxes me-1"></i>Custom Crating</span>
+          <span class="badge bg-light text-dark"><i class="fas fa-tags me-1"></i>Inventory</span>
+        </div>
+        <div class="service-cta mt-3">
+          <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#packingModal">Learn More</button>
+          <button class="btn btn-sm btn-primary ms-2 book-service-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Now</button>
+        </div>
       </div>
+    </div>
+</div>
       
       <div class="col-md-4">
-        <div class="card h-100 service-card" onclick="showServiceDetails('IT Relocation')">
-          <div class="card-body text-center p-4">
-            <div class="service-icon-wrapper">
-              <div class="service-icon bg-info bg-opacity-10 text-info">
-                <i class="fas fa-server"></i>
-              </div>
-            </div>
-            <h4 class="card-title my-3">IT Relocation</h4>
-            <p class="card-text">Specialized handling of servers, workstations and network equipment.</p>
-            <div class="service-highlights">
-              <span class="badge bg-light text-dark me-1"><i class="fas fa-ethernet me-1"></i>Network Setup</span>
-              <span class="badge bg-light text-dark"><i class="fas fa-database me-1"></i>Data Security</span>
-            </div>
-            <div class="service-cta mt-3">
-              <button class="btn btn-sm btn-outline-primary">Learn More</button>
-              <button class="btn btn-sm btn-primary ms-2">Book Now</button>
-            </div>
+    <div class="card h-100 service-card"> <div class="card-body text-center p-4">
+        <div class="service-icon-wrapper">
+          <div class="service-icon bg-info bg-opacity-10 text-info">
+            <i class="fas fa-server"></i>
           </div>
-          <div class="service-ribbon bg-success">New</div>
+        </div>
+        <h4 class="card-title my-3">IT Relocation</h4>
+        <p class="card-text">Specialized handling of servers, workstations and network equipment.</p>
+        <div class="service-highlights">
+          <span class="badge bg-light text-dark me-1"><i class="fas fa-ethernet me-1"></i>Network Setup</span>
+          <span class="badge bg-light text-dark"><i class="fas fa-database me-1"></i>Data Security</span>
+        </div>
+        <div class="service-cta mt-3">
+          <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#itRelocationModal">Learn More</button>
+          <button class="btn btn-sm btn-primary ms-2 book-service-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Now</button>
         </div>
       </div>
-      
-      <!-- Add 3 more service cards following the same pattern -->
+      <div class="service-ribbon bg-success">New</div>
+    </div>
+</div>
+      <div class="col-md-4">
+    <div class="card h-100 service-card">
+      <div class="card-body text-center p-4">
+        <div class="service-icon-wrapper">
+          <div class="service-icon bg-success bg-opacity-10 text-success">
+            <i class="fas fa-warehouse"></i>
+          </div>
+        </div>
+        <h4 class="card-title my-3">Storage Solutions</h4>
+        <p class="card-text">Secure, climate-controlled storage for your assets during transition periods.</p>
+        <div class="service-highlights">
+          <span class="badge bg-light text-dark me-1"><i class="fas fa-shield-alt me-1"></i>24/7 Security</span>
+          <span class="badge bg-light text-dark"><i class="fas fa-thermometer-half me-1"></i>Climate Control</span>
+        </div>
+        <div class="service-cta mt-3">
+          <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#storageModal">Learn More</button>
+          <button class="btn btn-sm btn-primary ms-2 book-service-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Now</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="col-md-4">
+    <div class="card h-100 service-card">
+      <div class="card-body text-center p-4">
+        <div class="service-icon-wrapper">
+          <div class="service-icon bg-danger bg-opacity-10 text-danger">
+            <i class="fas fa-couch"></i>
+          </div>
+        </div>
+        <h4 class="card-title my-3">Furniture Assembly</h4>
+        <p class="card-text">Expert disassembly and reassembly of all office furniture and workstations.</p>
+        <div class="service-highlights">
+          <span class="badge bg-light text-dark me-1"><i class="fas fa-tools me-1"></i>Expert Technicians</span>
+          <span class="badge bg-light text-dark"><i class="fas fa-check-double me-1"></i>Ready to Use</span>
+        </div>
+        <div class="service-cta mt-3">
+          <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#furnitureModal">Learn More</button>
+          <button class="btn btn-sm btn-primary ms-2 book-service-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Now</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="col-md-4">
+    <div class="card h-100 service-card">
+      <div class="card-body text-center p-4">
+        <div class="service-icon-wrapper">
+          <div class="service-icon bg-secondary bg-opacity-10 text-secondary">
+            <i class="fas fa-trash-alt"></i>
+          </div>
+        </div>
+        <h4 class="card-title my-3">Junk Removal</h4>
+        <p class="card-text">Eco-friendly disposal and decommissioning of old furniture and equipment.</p>
+        <div class="service-highlights">
+          <span class="badge bg-light text-dark me-1"><i class="fas fa-leaf me-1"></i>Eco-Friendly</span>
+          <span class="badge bg-light text-dark"><i class="fas fa-recycle me-1"></i>Responsible Disposal</span>
+        </div>
+        <div class="service-cta mt-3">
+          <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#junkRemovalModal">Learn More</button>
+          <button class="btn btn-sm btn-primary ms-2 book-service-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Now</button>
+        </div>
+      </div>
+    </div>
+</div>
+  
     </div>
   </div>
 </section>
@@ -311,37 +406,68 @@
 
 
 <!-- Add after services section -->
-<section class="py-5 bg-white">
-  <div class="container">
-    <h2 class="section-title text-center mb-5">Service Comparison</h2>
-    <div class="table-responsive">
-      <table class="table table-bordered table-hover">
-        <thead class="table-primary">
-          <tr>
-            <th>Service</th>
-            <th>Standard</th>
-            <th>Premium</th>
-            <th>Enterprise</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Office Relocation</td>
-            <td><i class="fas fa-check text-success"></i></td>
-            <td><i class="fas fa-check text-success"></i></td>
-            <td><i class="fas fa-check text-success"></i></td>
-          </tr>
-          <tr>
-            <td>IT Equipment Handling</td>
-            <td><i class="fas fa-check text-success"></i></td>
-            <td><i class="fas fa-check text-success"></i></td>
-            <td><i class="fas fa-check text-success"></i> <span class="badge bg-info">Expert Team</span></td>
-          </tr>
-          <!-- Add more rows -->
-        </tbody>
-      </table>
+<section id="pricing-tiers" class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title display-5 fw-bold">Plans Tailored to Your Business</h2>
+            <p class="lead text-muted">Clear, transparent plans for businesses of every size.</p>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-4 mb-4">
+                <div class="pricing-card">
+                    <h4 class="card-title">Standard</h4>
+                    <p class="text-muted">For small teams & startups</p>
+                    <hr>
+                    <ul class="list-unstyled my-4">
+                        <li><i class="fas fa-check text-success me-2"></i>AI-Powered Moving Plan</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Professional Packing</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Secure Transportation</li>
+                        <li class="text-muted"><i class="fas fa-times me-2"></i>Real-Time Tracking</li>
+                        <li class="text-muted"><i class="fas fa-times me-2"></i>Weekend/Overnight Moving</li>
+                        <li class="text-muted"><i class="fas fa-times me-2"></i>Dedicated Move Coordinator</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline-primary w-100">Get Quote</a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="pricing-card highlighted">
+                    <div class="badge bg-primary text-wrap popular-badge">Most Popular</div>
+                    <h4 class="card-title">Premium</h4>
+                    <p class="text-muted">For growing businesses</p>
+                    <hr>
+                    <ul class="list-unstyled my-4">
+                        <li><i class="fas fa-check text-success me-2"></i>AI-Powered Moving Plan</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Professional Packing</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Secure Transportation</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Real-Time Tracking</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Weekend/Overnight Moving</li>
+                        <li class="text-muted"><i class="fas fa-times me-2"></i>Dedicated Move Coordinator</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary w-100">Get Quote</a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="pricing-card">
+                    <h4 class="card-title">Enterprise</h4>
+                    <p class="text-muted">For large-scale operations</p>
+                    <hr>
+                    <ul class="list-unstyled my-4">
+                        <li><i class="fas fa-check text-success me-2"></i>AI-Powered Moving Plan</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Professional Packing</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Secure Transportation</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Real-Time Tracking</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Weekend/Overnight Moving</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Dedicated Move Coordinator</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline-primary w-100">Get Quote</a>
+                </div>
+            </div>
+
+        </div>
     </div>
-  </div>
 </section>
 <!-- Add after Services Section -->
 <section class="py-5">
@@ -382,114 +508,94 @@
 
 
   <!-- Gallery Section -->
-  <section class="py-5">
+<section id="gallery" class="py-5 bg-light">
     <div class="container">
-      <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="0" class="active"></button>
-          <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="1"></button>
-          <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="2"></button>
+        <div class="text-center mb-5">
+            <h2 class="section-title display-5 fw-bold">A Glimpse Into Our Process</h2>
+            <p class="lead text-muted">See how we deliver a seamless move, every step of the way.</p>
         </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="family.jpg" class="d-block w-100" alt="Family moving" style="object-fit: cover; height: 500px;">
-          </div>
-          <div class="carousel-item">
-            <img src="couple.jpg" class="d-block w-100" alt="Couple moving" style="object-fit: cover; height: 500px;">
-          </div>
-          <div class="carousel-item">
-            <img src="dog.jpg" class="d-block w-100" alt="Pet moving" style="object-fit: cover; height: 500px;">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon"></span>
-        </button>
-      </div>
-    </div>
-  </section>
 
-  <!-- Testimonials Section -->
-  <!-- Update Testimonials Section -->
-<section id="testimonials" class="testimonial py-5">
-  <div class="container">
-    <h2 class="section-title">What Our Indian Clients Say</h2>
-    <div class="row">
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 testimonial-card">
-          <div class="card-body">
-            <div class="rating mb-2">
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
+        <div id="processCarousel" class="carousel slide shadow-lg" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#processCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#processCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#processCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#processCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
             </div>
-            <p class="card-text">"BizMovePro handled our Gurgaon to Noida office move flawlessly. Their team worked overnight to ensure zero business disruption."</p>
-            <div class="d-flex align-items-center mt-3">
-              <div class="me-3">
-                <i class="fas fa-user-circle fa-2x"></i>
-              </div>
-              <div>
-                <h6 class="mb-0">Rajesh Sharma</h6>
-                <small class="text-muted">Director, TechSolutions India</small>
-              </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070" class="d-block w-100" alt="Team planning a move">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="text-white">1. Meticulous Planning</h5>
+                        <p >Our experts create a detailed, AI-assisted plan for your specific needs.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="secure.png" class="d-block w-100" alt="Professionals packing office equipment">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="text-white">2. Secure Packing</h5>
+                        <p>We use premium materials to protect your most valuable assets.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="transit.png" class="d-block w-100" alt="Moving truck being loaded">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="text-white">3. Efficient Transit</h5>
+                        <p>Your items are transported securely with real-time tracking.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="readytowork.png" class="d-block w-100" alt="Team setting up workstations">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="text-white">4. Ready-to-Work Setup</h5>
+                        <p>We set up your new office so your team is ready to go.</p>
+                    </div>
+                </div>
             </div>
-          </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#processCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#processCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 testimonial-card">
-          <div class="card-body">
-            <div class="rating mb-2">
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star-half-alt text-warning"></i>
-            </div>
-            <p class="card-text">"As a startup, we needed affordable moving. BizMovePro provided excellent service at Bangalore prices with Mumbai quality!"</p>
-            <div class="d-flex align-items-center mt-3">
-              <div class="me-3">
-                <i class="fas fa-user-circle fa-2x"></i>
-              </div>
-              <div>
-                <h6 class="mb-0">Priya Patel</h6>
-                <small class="text-muted">Founder, DesignHub India</small>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 testimonial-card">
-          <div class="card-body">
-            <div class="rating mb-2">
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-            </div>
-            <p class="card-text">"Our sensitive lab equipment was moved from Delhi to Hyderabad without a scratch. Highly professional team."</p>
-            <div class="d-flex align-items-center mt-3">
-              <div class="me-3">
-                <i class="fas fa-user-circle fa-2x"></i>
-              </div>
-              <div>
-                <h6 class="mb-0">Dr. Amit Kumar</h6>
-                <small class="text-muted">Research Head, BioTech Labs</small>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 </section>
+  <!-- Testimonials Section -->
+<section id="advantage" class="py-5">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">The BizMovePro Advantage</h2>
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="advantage-card traditional">
+                    <h4 class="mb-4">Traditional Movers</h4>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-times-circle text-danger me-2"></i>Vague Timelines & Planning</li>
+                        <li><i class="fas fa-times-circle text-danger me-2"></i>Costly Business Disruption</li>
+                        <li><i class="fas fa-times-circle text-danger me-2"></i>Lack of Real-Time Updates</li>
+                        <li><i class="fas fa-times-circle text-danger me-2"></i>Risk of Damaged Equipment</li>
+                    </ul>
+                </div>
+            </div>
 
+            <div class="col-lg-6 mb-4">
+                <div class="advantage-card bizmovepro">
+                    <h4 class="mb-4">BizMovePro</h4>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-check-circle text-success me-2"></i>AI-Powered Precision Planning</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i>Guaranteed Zero-Downtime Moves</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i>Live Tracking & Full Transparency</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i>Fully Insured & Secure Handling</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
   <!-- FAQ Section -->
   <section id="faq" class="faq py-5">
     <div class="container">
@@ -588,9 +694,303 @@
     </div>
   </div>
 </section>
-
+<div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="bookingModalLabel">Book Your Move</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="bookingForm">
+          <div class="mb-3">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" id="phone" name="phone">
+          </div>
+          <div class="mb-3">
+            <label for="service" class="form-label">Select Service</label>
+            <select class="form-select" id="service" name="service" required>
+              <option value="">Choose a service...</option>
+              <option>Office Relocation</option>
+              <option>Packing Services</option>
+              <option>IT Equipment Moving</option>
+            </select>
+          </div>
+           <div class="mb-3">
+            <label for="message" class="form-label">Additional Details</label>
+            <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" form="bookingForm">Submit Booking</button>
+      </div>
+    </div>
+  </div>
+</div>
   <!-- Footer -->
-  <footer class="footer">
+<div class="modal fade" id="aiPlannerModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">AI Planner Demo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body" id="aiPlannerBody">
+        <p>Enter your basic details to see how our AI generates a preliminary moving plan.</p>
+        <div class="mb-3">
+          <label class="form-label">Office Size (sq ft)</label>
+          <input type="number" class="form-control" id="demoOfficeSize" value="2500">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Number of Employees</label>
+          <input type="number" class="form-control" id="demoEmployeeCount" value="50">
+        </div>
+        <button class="btn btn-primary w-100" onclick="generatePlan()">
+          <i class="fas fa-cogs me-2"></i>Generate My Plan
+        </button>
+        <div id="planResult" class="mt-4"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="trackingModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Real-Time Tracking Demo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <h6>Shipment Status: <strong id="shipmentStatus">Processing</strong></h6>
+        <div class="progress mb-3">
+          <div id="trackingProgressBar" class="progress-bar bg-success" style="width: 10%;"></div>
+        </div>
+        <ul class="list-group">
+          <li id="status-packed" class="list-group-item d-flex justify-content-between align-items-center text-muted">
+            Items Packed
+            <span id="badge-packed" class="badge bg-secondary rounded-pill"><i class="fas fa-clock"></i></span>
+          </li>
+          <li id="status-transit" class="list-group-item d-flex justify-content-between align-items-center text-muted">
+            In Transit
+            <span id="badge-transit" class="badge bg-secondary rounded-pill"><i class="fas fa-clock"></i></span>
+          </li>
+          <li id="status-delivered" class="list-group-item d-flex justify-content-between align-items-center text-muted">
+            Delivered
+            <span id="badge-delivered" class="badge bg-secondary rounded-pill"><i class="fas fa-clock"></i></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="officeRelocationModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Office Relocation Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Our comprehensive Office Relocation service is designed for a seamless, zero-downtime transition. We handle every aspect of your move with meticulous planning and execution.</p>
+        <h6>What's Included:</h6>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i>Dedicated Move Coordinator</li>
+          <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i>Professional Packing & Unpacking</li>
+          <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i>Furniture Disassembly & Reassembly</li>
+          <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i>Secure Transportation with Live Tracking</li>
+          <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i>Full Insurance Coverage</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary book-service-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">Book This Service</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="downtimeModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">How Zero-Downtime Moving Works</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>We ensure your business never stops running. Our process is designed for maximum efficiency after your work hours.</p>
+        <ul class="list-unstyled">
+          <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i><strong>Friday Evening:</strong> We begin packing critical equipment as your team clocks out.</li>
+          <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i><strong>Overnight:</strong> Our teams transport everything to the new location.</li>
+          <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i><strong>Saturday:</strong> We unpack, set up workstations, and configure IT systems.</li>
+          <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i><strong>Monday Morning:</strong> Your team arrives at the new office, ready to work.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="packingModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Packing Services Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Our expert packing services ensure the safety of your most valuable assets. We use premium, industry-standard materials and techniques.</p>
+        <h6>What's Included:</h6>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i>Custom crating for fragile items</li>
+          <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i>Detailed inventory management</li>
+          <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i>Systematic labeling for easy unpacking</li>
+          <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i>Anti-static packing for electronics</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary book-service-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">Book This Service</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="itRelocationModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">IT Relocation Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>We specialize in the secure and efficient relocation of your critical IT infrastructure. Our team handles everything from servers to workstations with expert care.</p>
+        <h6>What's Included:</h6>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i>Secure server decommissioning and recommissioning</li>
+          <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i>Workstation and peripheral setup</li>
+          <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i>Network and cable management</li>
+          <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i>Data security protocols during transit</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary book-service-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">Book This Service</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="storageModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Storage Solutions Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Whether you need short-term storage during your move or a long-term solution, we offer secure, climate-controlled facilities to protect your valuable business assets.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary book-service-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">Book This Service</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="furnitureModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Furniture Assembly Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Our skilled technicians handle the careful disassembly of your existing office furniture and the precise reassembly at your new location, ensuring everything is set up correctly and ready for your team.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary book-service-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">Book This Service</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="junkRemovalModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Junk Removal Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Moving is the perfect time to declutter. We offer responsible and eco-friendly removal and disposal services for your old furniture, electronics, and other office equipment you're leaving behind.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary book-service-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">Book This Service</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Client Login</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="loginForm">
+          <div class="mb-3">
+            <label for="loginEmail" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="loginEmail" name="email" required>
+          </div>
+          <div class="mb-3">
+            <label for="loginPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="loginPassword" name="password" required>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="signUpModalLabel">Create an Account</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="signUpForm">
+          <div class="mb-3">
+            <label for="signUpName" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="signUpName" name="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="signUpEmail" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="signUpEmail" name="email" required>
+          </div>
+          <div class="mb-3">
+            <label for="signUpPassword" class="form-label">Create Password</label>
+            <input type="password" class="form-control" id="signUpPassword" name="password" required>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+  <footer section id="footer" class="footer">
     <div class="container">
       <div class="row">
         <div class="col-lg-4 mb-4">
@@ -616,17 +1016,17 @@
         <div class="col-lg-3 col-md-6 mb-4">
           <h5>Services</h5>
           <ul class="footer-links">
-            <li><a href="#">Office Relocation</a></li>
-            <li><a href="#">Packing Services</a></li>
-            <li><a href="#">IT Equipment Moving</a></li>
-            <li><a href="#">Storage Solutions</a></li>
-            <li><a href="#">Custom Moving Plans</a></li>
+            <li><a href="#services">Office Relocation</a></li>
+            <li><a href="#services">Packing Services</a></li>
+            <li><a href="#services">IT Equipment Moving</a></li>
+            <li><a href="#services">Storage Solutions</a></li>
+            <li><a href="#services">Custom Moving Plans</a></li>
           </ul>
         </div>
         <div class="col-lg-3 mb-4">
           <h5>Contact Us</h5>
           <ul class="footer-links">
-            <li><i class="fas fa-map-marker-alt me-2"></i> 123 Business Street, Startup City</li>
+            <li><i class="fas fa-map-marker-alt me-2"></i> xyz</li>
             <li><i class="fas fa-phone me-2"></i> +1 (123) 456-7890</li>
             <li><i class="fas fa-envelope me-2"></i> support@bizmovepro.com</li>
             <li><i class="fas fa-clock me-2"></i> Mon-Fri: 8AM-6PM</li>
@@ -698,6 +1098,7 @@
     scrollBtn.classList.add('clicked');
     setTimeout(() => scrollBtn.classList.remove('clicked'), 400);
   });
+  
 </script>
   
 </body>
