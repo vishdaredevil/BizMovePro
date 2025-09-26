@@ -6,8 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
 
+        // Correct API URL with the login endpoint path
+        const API_URL = 'https://bizmovepro-backend.onrender.com/api/users/login'; 
+
         try {
-            const response = await fetch('https://bizmovepro-backend.onrender.com', {
+            const response = await fetch(API_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password })
@@ -23,8 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } catch (error) {
             console.error('Login error:', error);
-            alert('An error occurred. Please try again.');
+            alert('An error occurred. Please check your network or try again.');
         }
     });
-
 });
