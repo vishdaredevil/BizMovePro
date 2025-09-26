@@ -1,15 +1,33 @@
-const express=require('express');
-const mongoose=require('mongoose');
-const bodyParser=require('body-parser');
-const cors=require('cors');
-const app=express();
-const PORT=process.env.PORT||5000;
-app.use(cors());
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const app = express();
+const PORT = process.env.PORT || 5000;
+
+// =======================================================
+// FIX 1: Explicit CORS Configuration
+// This allows your Netlify frontend to connect securely.
+// =======================================================
+const CLIENT_ORIGIN = 'https://bizmovepro.netlify.app';
+
+app.use(cors({
+    origin: CLIENT_ORIGIN,
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+    optionsSuccessStatus: 204
+}));
+// =======================================================
+
+
 app.use(bodyParser.json());
-const dbURI = process.env.DATABASE_URL;
+
+// MongoDB connection now correctly uses the DATABASE_URL environment variable from Render
+const dbURI = process.env.DATABASE_URL; 
 mongoose.connect(dbURI)
     .then(()=> console.log('MongoDB connected'))
     .catch(err=> console.error('MongoDB connection error:', err));
+    
 const quoteSchema=new mongoose.Schema({
     name: String,
     email: String,
@@ -30,18 +48,23 @@ const Booking=mongoose.model('Booking', bookingSchema);
 app.get('/', (req, res) => {
     res.send('BizMovePro Backend is running');
 });
+
+// ... (API routes for quote and booking remain unchanged)
+
 app.post('/api/quote', (req, res) => {
     const newQuote = new Quote(req.body);
     newQuote.save()
         .then(() => res.status(200).json({ message: 'Quote created successfully' }))
         .catch(err => res.status(400).json({ error: 'Error creating quote' }));
 });
+
 app.post('/api/booking', (req, res) => {
   const newBooking = new Booking(req.body);
   newBooking.save()
     .then(() => res.status(200).json({ message: 'Booking received!' }))
     .catch(err => res.status(400).json({ error: 'Error saving booking.' }));
 });
+
 app.listen(PORT, () => {
   console.log(`🚀 Server is running on http://localhost:${PORT}`);
 });
@@ -75,6 +98,7 @@ app.post('/api/users/register', async (req, res) => {
         res.status(500).send('Server error');
     }
 });
+
 app.post('/api/users/login', async (req, res) => {
     try {
         const { email, password } = req.body;
@@ -88,12 +112,16 @@ app.post('/api/users/login', async (req, res) => {
             return res.status(400).json({ message: 'Invalid credentials' });
         }
         // Create and return a JWT
+
+        // =======================================================
+        // FIX 2: Use the JWT_SECRET environment variable
+        // =======================================================
         const payload = { userId: user.id };
-        const token = jwt.sign(payload, 'yourSecretKey', { expiresIn: '1h' });
+        const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' }); 
+        // =======================================================
+        
         res.json({ token });
     } catch (err) {
         res.status(500).send('Server error');
     }
 });
-
-
