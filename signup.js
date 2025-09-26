@@ -7,8 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
 
+        // Correct API URL with the registration endpoint path
+        const API_URL = 'https://bizmovepro-backend.onrender.com/api/users/register';
+
         try {
-            const response = await fetch('https://bizmovepro-backend.onrender.com', {
+            const response = await fetch(API_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, email, password })
@@ -21,12 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 // Handle errors like a user already existing
                 const errorData = await response.json();
-                alert(`Sign up failed: ${errorData.message}`);
+                alert(`Sign up failed: ${errorData.message || 'Server error.'}`);
             }
         } catch (error) {
             console.error('Sign up error:', error);
-            alert('An error occurred. Please try again.');
+            alert('An error occurred. Please check your network or try again.');
         }
     });
-
 });
