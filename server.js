@@ -5,23 +5,17 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// =======================================================
-// FIX 1: Explicit CORS Configuration
-// This allows your Netlify frontend to connect securely.
-// =======================================================
+
+
 const CLIENT_ORIGIN = 'https://bizmovepro.netlify.app';
 
-// server.js
-
 app.use(cors({
-    origin: 'https://bizmovepro.netlify.app',
-    // Change this line:
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS', //
+    origin: CLIENT_ORIGIN,
+
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS', 
     credentials: true,
     optionsSuccessStatus: 204
 }));
-// =======================================================
-
 
 app.use(bodyParser.json());
 
@@ -128,5 +122,6 @@ app.post('/api/users/login', async (req, res) => {
         res.status(500).send('Server error');
     }
 });
+
 
 
