@@ -12,8 +12,9 @@ const PORT = process.env.PORT || 5000;
 const CLIENT_ORIGIN = 'https://bizmovepro.netlify.app';
 
 app.use(cors({
-    origin: CLIENT_ORIGIN,
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    origin: 'https://bizmovepro.netlify.app',
+    // Change this line:
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS', 
     credentials: true,
     optionsSuccessStatus: 204
 }));
@@ -125,3 +126,4 @@ app.post('/api/users/login', async (req, res) => {
         res.status(500).send('Server error');
     }
 });
+
