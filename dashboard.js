@@ -33,6 +33,18 @@ async function fetchUserData(token) {
         // When your backend is ready, you'll replace 'Client' with the user's actual name
         welcomeMessage.textContent = `Welcome, Client!`;
     }
+    function handleLogout() {
+    localStorage.removeItem('authToken');
+    // Redirect to the homepage after logout
+    window.location.href = 'index.html'; 
+}
+
+// --- MAIN DASHBOARD SCRIPT ---
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Authentication Check (Page Guard)
+    const token = localStorage.getItem('authToken');
+    // ... (rest of the code)
+});
     
     /*
     // EXAMPLE of how you would fetch real data in the future:
@@ -56,4 +68,5 @@ async function fetchUserData(token) {
         handleLogout(); // Logout on error
     }
     */
+
 }
