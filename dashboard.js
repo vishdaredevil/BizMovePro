@@ -1,3 +1,12 @@
+// --- GLOBAL LOGOUT FUNCTION ---
+// Function is defined outside the DOMContentLoaded event so it can be called 
+// directly from the onclick attributes in dashboard.html.
+function handleLogout() {
+    // 1. Remove the authentication token
+    localStorage.removeItem('authToken');
+    // 2. Redirect to the homepage after logout
+    window.location.href = 'index.html'; 
+}
 
 // --- MAIN DASHBOARD SCRIPT ---
 document.addEventListener('DOMContentLoaded', () => {
@@ -19,54 +28,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Fetch and display user-specific data (Future Step)
+    // 3. Fetch and display user-specific data (Placeholder)
     fetchUserData(token);
 });
 
 // This is a placeholder for fetching real user data from your backend
 async function fetchUserData(token) {
-    // In the future, you will create a backend endpoint like '/api/users/me'
-    // For now, we will just use a placeholder name.
     
     const welcomeMessage = document.getElementById('welcomeMessage');
     if(welcomeMessage) {
-        // When your backend is ready, you'll replace 'Client' with the user's actual name
+        // Current behavior: displays "Welcome, Client!" for all users
         welcomeMessage.textContent = `Welcome, Client!`;
     }
-    function handleLogout() {
-    localStorage.removeItem('authToken');
-    // Redirect to the homepage after logout
-    window.location.href = 'index.html'; 
-}
-
-// --- MAIN DASHBOARD SCRIPT ---
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Authentication Check (Page Guard)
-    const token = localStorage.getItem('authToken');
-    // ... (rest of the code)
-});
     
-    /*
-    // EXAMPLE of how you would fetch real data in the future:
-    try {
-        const response = await fetch('http://localhost:5000/api/users/me', {
-            headers: {
-                'Authorization': `Bearer ${token}`
-            }
-        });
-        if (!response.ok) {
-            // If token is invalid, log the user out
-            handleLogout();
-            return;
-        }
-        const userData = await response.json();
-        // Update the UI with the user's name
-        welcomeMessage.textContent = `Welcome, ${userData.name}!`;
-
-    } catch (error) {
-        console.error('Failed to fetch user data:', error);
-        handleLogout(); // Logout on error
-    }
-    */
-
+    // Future expansion will go here to fetch the real user name.
 }
